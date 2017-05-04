@@ -1,0 +1,363 @@
+<!-- .memberContent start -->
+
+<main class="memberContent">
+
+
+    <!-- .memberTabs start -->
+    <section class="memberTabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" [ngClass]="{active:isClickActiveMember}" (click)='isClickActiveMember=!isClickActiveMember' (click)="updateCards()">活跃会员</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [ngClass]="{active:!isClickActiveMember}" (click)='isClickActiveMember=!isClickActiveMember' (click)="updateCards('d')">存款会员</a>
+            </li>
+        </ul>
+        <button class="btnPosition" [routerLink]='["/br/MembersInfo","n"]'>进阶查询</button>
+    </section>
+
+
+    <!-- .memberTabs end -->
+    <!-- .memberPanel start -->
+    <section class="memberPanel">
+        <div class="list clearFix">
+
+
+            <div *ngIf="card1" class="panel flip" [ngClass]="{'blurdiv': card1.isQuery}" placement="bottom" [tooltip]="card1.tip">
+                <div class='card' [ngClass]="{flipped:card1.isFlipped}" (click)='card1.isFlipped=!card1.isFlipped'>
+                    <div class="face front">
+                        <div class="info" [ngClass]="{fail:card1.isLoadFail}">
+                            <p class="title">{{card1.displayName}}</p>
+                            <p class="data" [innerHTML]='card1.span'></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card1.trend), 'down':!isTrendRising(card1.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card1.trend), 'icon-down':!isTrendRising(card1.trend)}"></div>{{ card1?.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card1.name)'></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card1.displayName}}</p>
+                            <p class="data" [innerHTML]='card1.span'></p>
+                            <nvd3 [options]="card1.options" [data]="card1.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 日活跃会员数 -->
+            <div *ngIf="card2" class="panel flip" [ngClass]="{ 'blurdiv': card2.isQuery}" placement="bottom" [tooltip]="card2.tip">
+                <div class='card' [ngClass]="{flipped:card2.isFlipped}" (click)='card2.isFlipped=!card2.isFlipped'>
+                    <div class="face front">
+                        <div class="info" [ngClass]="{fail:card2.isLoadFail}">
+                            <p class="title">{{card2.displayName}}</p>
+                            <p class="data" [innerHTML]='card2.span'></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card2.trend), 'down':!isTrendRising(card2.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card2.trend), 'icon-down':!isTrendRising(card2.trend)}"></div>{{card2?.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card2.name) '></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card2.displayName}}</p>
+                            <p class="data" [innerHTML]='card2.span'></p>
+                            <nvd3 [options]="card2.options" [data]="card2.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card3" class="panel flip" [ngClass]="{ 'blurdiv': card3.isQuery}" placement="bottom" [tooltip]="card3.tip">
+                <div class='card' [ngClass]="{flipped:card3.isFlipped}" (click)='card3.isFlipped=!card3.isFlipped'>
+                    <div class="face front">
+                        <div class="info" [ngClass]="{fail:card3.isLoadFail}">
+                            <p class="title">{{card3.displayName}}</p>
+                            <p class="data" [innerHTML]='card3.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card3.trend), 'down':!isTrendRising(card3.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card3.trend), 'icon-down':!isTrendRising(card3.trend)}"></div>{{card3.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card3.name)'></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card3.displayName}}</p>
+                            <p class="data" [innerHTML]='card3.span '></p>
+                            <nvd3 [options]="card3.options" [data]="card3.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card4" class="panel flip" [ngClass]="{ 'blurdiv': card4.isQuery}" placement="bottom" [tooltip]="card4.tip">
+                <div class='card' [ngClass]="{flipped:card4.isFlipped}" (click)='card4.isFlipped=!card4.isFlipped'>
+                    <div class="face front">
+                        <div class="info" [ngClass]="{fail:card4.isLoadFail}">
+                            <p class="title">{{card4.displayName}}</p>
+                            <p class="data" [innerHTML]='card4.span '></p>
+                            <div [ngClass]="{'up': isTrendRising(card4.trend), 'down':!isTrendRising(card4.trend)}">
+                                <div [ngClass]="{'icon-up': isTrendRising(card4.trend), 'icon-down':!isTrendRising(card4.trend)}"></div>{{card4.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card4.name)'></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card4.displayName}}</p>
+                            <p class="data" [innerHTML]='card4.span'></p>
+                            <nvd3 [options]="card4.options" [data]="card4.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div *ngIf="card5" class="panel flip" [ngClass]="{ 'blurdiv ': card5.isQuery}" placement="bottom" [tooltip]="card5.tip">
+                <div class='card' [ngClass]="{flipped:card5.isFlipped} " (click)='card5.isFlipped=!card5.isFlipped'>
+                    <div class="face front">
+                        <div class="info" [ngClass]="{fail:card5.isLoadFail} ">
+                            <p class="title">{{card5.displayName}}</p>
+                            <p class="data" [innerHTML]='card5.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card5.trend), 'down':!isTrendRising(card5.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card5.trend), 'icon-down':!isTrendRising(card5.trend)}"></div>{{card5.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card5.name)'></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card5.displayName}}</p>
+                            <p class="data" [innerHTML]='card5.span'></p>
+                            <nvd3 [options]="card5.options" [data]="card5.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card6 " class="panel flip " [ngClass]="{ 'blurdiv ': card6.isQuery}" placement="bottom" [tooltip]="card6.tip">
+                <div class='card ' [ngClass]="{flipped:card6.isFlipped} " (click)='card6.isFlipped=!card6.isFlipped'>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card6.isLoadFail} ">
+                            <p class="title ">{{card6.displayName}}</p>
+                            <p class="data " [innerHTML]='card6.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card6.trend), 'down':!isTrendRising(card6.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card6.trend), 'icon-down':!isTrendRising(card6.trend)}"></div>{{card6.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card6.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card6.displayName}}</p>
+                            <p class="data " [innerHTML]='card6.span '></p>
+                            <nvd3 [options]="card6.options " [data]="card6.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card7" class="panel flip" [ngClass]="{ 'blurdiv': card7.isQuery}" placement="bottom" [tooltip]="card7.tip">
+                <div class='card' [ngClass]="{flipped:card7.isFlipped}" (click)='card7.isFlipped=!card7.isFlipped'>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card7.isLoadFail}">
+                            <p class="title ">{{card7.displayName}}</p>
+                            <p class="data " [innerHTML]='card7.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card7.trend), 'down':!isTrendRising(card7.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card7.trend), 'icon-down':!isTrendRising(card7.trend)}"></div>{{card7.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon" [ngClass]='getIconClass(card7.name)'></div>
+                    </div>
+                    <div class="face back">
+                        <div class="info">
+                            <p class="title">{{card7.displayName}}</p>
+                            <p class="data" [innerHTML]='card7.span'></p>
+                            <nvd3 [options]="card7.options" [data]="card7.data"></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card8 " class="panel flip" [ngClass]="{ 'blurdiv ': card8.isQuery}" placement="bottom" [tooltip]="card8.tip">
+                <div class='card ' [ngClass]="{flipped:card8.isFlipped} " (click)='card8.isFlipped=!card8.isFlipped'>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card8.isLoadFail} ">
+                            <p class="title ">{{card8.displayName}}</p>
+                            <p class="data " [innerHTML]='card8.span '></p>
+                            <div [ngClass]="{'up': isTrendRising(card8.trend), 'down': !isTrendRising(card8.trend)}">
+                                <div [ngClass]="{'icon-up': isTrendRising(card8.trend), 'icon-down':!isTrendRising(card8.trend)}"></div>{{card8.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card8.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card8.displayName}}</p>
+                            <p class="data " [innerHTML]='card8.span '></p>
+                            <nvd3 [options]="card8.options " [data]="card8.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card9 " class="panel flip " [ngClass]="{ 'blurdiv ': card9.isQuery}" placement="bottom" [tooltip]="card9.tip">
+                <div class='card ' [ngClass]="{flipped:card9.isFlipped} " (click)='card9.isFlipped=!card9.isFlipped'>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card9.isLoadFail} ">
+                            <p class="title ">{{card9.displayName}}</p>
+                            <p class="data " [innerHTML]='card9.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card9.trend), 'down':!isTrendRising(card9.trend)}">
+                                <div [ngClass]="{ 'icon-up': isTrendRising(card9.trend), 'icon-down':!isTrendRising(card9.trend)} "></div>{{card9.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card9.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card9.displayName}}</p>
+                            <p class="data " [innerHTML]='card9.span '></p>
+                            <nvd3 [options]="card9.options " [data]="card9.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card10 " class="panel flip " [ngClass]="{ 'blurdiv ': card10.isQuery}" placement="bottom" [tooltip]="card10.tip">
+                <div class='card ' [ngClass]="{flipped:card10.isFlipped} " (click)='card10.isFlipped=!card10.isFlipped'>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card10.isLoadFail} ">
+                            <p class="title ">{{card10.displayName}}</p>
+                            <p class="data " [innerHTML]='card10.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card10.trend), 'down':!isTrendRising(card10.trend)}">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card10.trend), 'icon-down ':!isTrendRising(card10.trend)}"></div>{{card10.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card10.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card10.displayName}}</p>
+                            <p class="data " [innerHTML]='card10.span '></p>
+                            <nvd3 [options]="card10.options " [data]="card10.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card11 " class="panel flip" [ngClass]="{ 'blurdiv ': card11.isQuery} " placement="bottom" [tooltip]="card11.tip">
+                <div class='card ' [ngClass]="{flipped:card11.isFlipped} " (click)='card11.isFlipped=!card11.isFlipped '>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card11.isLoadFail} ">
+                            <p class="title ">{{card11.displayName}}</p>
+                            <p class="data " [innerHTML]='card11.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card11.trend), 'down':!isTrendRising(card11.trend)} ">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card11.trend), 'icon-down ':!isTrendRising(card11.trend)} "></div>{{card11.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card11.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card11.displayName}}</p>
+                            <p class="data " [innerHTML]='card11.span '></p>
+                            <nvd3 [options]="card11.options " [data]="card11.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card12 " class="panel flip " [ngClass]="{ 'blurdiv ': card12.isQuery} " placement="bottom " [tooltip]="card12.tip">
+                <div class='card ' [ngClass]="{flipped:card12.isFlipped} " (click)='card12.isFlipped=!card12.isFlipped '>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card12.isLoadFail} ">
+                            <p class="title ">{{card12.displayName}}</p>
+                            <p class="data " [innerHTML]='card12.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card12.trend), 'down':!isTrendRising(card12.trend)} ">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card12.trend), 'icon-down ':!isTrendRising(card12.trend)} "></div>{{card12.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card12.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card12.displayName}}</p>
+                            <p class="data " [innerHTML]='card12.span '></p>
+                            <nvd3 [options]="card12.options " [data]="card12.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card13 " class="panel flip " [ngClass]="{ 'blurdiv ': card13.isQuery} " placement="bottom " [tooltip]="card13.tip">
+                <div class='card ' [ngClass]="{flipped:card13.isFlipped} " (click)='card13.isFlipped=!card13.isFlipped '>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card13.isLoadFail} ">
+                            <p class="title ">{{card13.displayName}}</p>
+                            <p class="data " [innerHTML]='card13.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card13.trend), 'down':!isTrendRising(card13.trend)} ">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card13.trend), 'icon-down ':!isTrendRising(card13.trend)} "></div>{{card13?.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card13.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card13.displayName}}</p>
+                            <p class="data " [innerHTML]='card13.span '></p>
+                            <nvd3 [options]="card13.options " [data]="card13.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="card14 " class="panel flip" [ngClass]="{ blurdiv: card14.isQuery, hiddenCard: cardHidden}" placement="bottom " [tooltip]="card14.tip">
+                <div class='card ' [ngClass]="{flipped:card14.isFlipped} " (click)='card14.isFlipped=!card14.isFlipped '>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card14.isLoadFail} ">
+                            <p class="title ">{{card14.displayName}}</p>
+                            <p class="data " [innerHTML]='card14.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card14.trend), 'down':!isTrendRising(card14.trend)} ">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card14.trend), 'icon-down ':!isTrendRising(card14.trend)} "></div>{{card14.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card14.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card14.displayName}}</p>
+                            <p class="data " [innerHTML]='card14.span '></p>
+                            <nvd3 [options]="card14.options " [data]="card14.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="card15 " class="panel flip " [ngClass]="{ blurdiv: card15.isQuery, hiddenCard: cardHidden}" placement="bottom " [tooltip]="card15.tip">
+                <div class='card ' [ngClass]="{flipped:card15.isFlipped} " (click)='card15.isFlipped=!card15.isFlipped '>
+                    <div class="face front">
+                        <div class="info " [ngClass]="{fail:card15.isLoadFail} ">
+                            <p class="title ">{{card15.displayName}}</p>
+                            <p class="data " [innerHTML]='card15.span '></p>
+                            <div [ngClass]="{ 'up': isTrendRising(card15.trend), 'down':!isTrendRising(card15.trend)} ">
+                                <div [ngClass]="{ 'icon-up ': isTrendRising(card15.trend), 'icon-down ':!isTrendRising(card15.trend)} "></div>{{card15.trend}}<span>%</span></div>
+                        </div>
+                        <div class="icon " [ngClass]='getIconClass(card15.name) '></div>
+                    </div>
+                    <div class="face back ">
+                        <div class="info ">
+                            <p class="title ">{{card15.displayName}}</p>
+                            <p class="data " [innerHTML]='card15.span '></p>
+                            <nvd3 [options]="card15.options " [data]="card15.data "></nvd3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <!-- .memberPanel end -->
+</main>
+<!-- .memberContent end -->
+<ng2-toasty></ng2-toasty>

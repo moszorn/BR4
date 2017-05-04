@@ -1,0 +1,50 @@
+ <!--  panel_sort 游戏種類 panel_sort 游戏種類-->
+                        <div class="panel_sort">
+                            <div class="area_rsearch_panel pd-10">
+                                <!-- pick you sort-->
+                                <div class="rsearch_name_panel t-center">
+                                    <div class="button_sort">
+                                        <!--
+                                        <button class="mt-10 w75 ">体育</button>
+                                        <button class="mt-10 w75 active">視訊</button>
+                                        <button class="mt-10 w75">賽馬</button>
+                                        <button class="mt-10 w75 ">機率</button>
+                                        <button class="mt-10 w75 active">彩票</button>
+                                        <button class="mt-10 w75 ">真人</button> -->
+                                         <label *ngFor="let item of srv.GAME_SORT_CATEGORIES" class="btn btn-primary mt-10 w75" [ngModel]="item.isChecked" (click)='item.isChecked = !item.isChecked;gameSort_StatusUpdate(item);' btnCheckbox>{{item.category}}</label>
+                                    </div>
+                                    <div class="button_sort2">
+                                        <!-- 
+                                        <button class="wh mt-10 active">BB</button><button class="wh mt-10 active">SABA</button><button class="wh mt-10 active">35ing</button>
+                                        <button class="wh mt-10 ">XTD</button><button class="wh mt-10">AG</button><button class="wh mt-10">MG2</button>
+                                        <button class="wh mt-10 ">PT2</button><button class="wh mt-10">GPI</button><button class="wh mt-10 active">Allbet</button> -->
+                                        <label *ngFor='let hall of srv.GAME_SORT_HALLS_SELECTED' class="btn btn-primary mt-10 w75" btnCheckbox [ngModel]='hall.isChecked' (click)="hall.isChecked = !hall.isChecked;gameSort_PickUpdate(hall);">{{hall.name}}</label>
+                                    </div>
+                                </div>
+                                 <!-- pick you sort//-->
+<!--   除錯區,請暫時勿刪除 ZORN : 2017-5-4        --> 
+<div class="row">
+    <div class="col-6">
+        {{ srv.GAME_SORT_CATEGORIES | json }}
+    </div>
+    <div class="col-6">
+        {{ srv.GAME_SORT_HALLS_SELECTED | json }}
+    </div>
+</div>   
+
+                                <!-- show pick sort-->
+                                <div class="panel__showpick pd-10">                                  
+                                    <!--
+                                    <div class="showpick">
+                                        <div class="showpick_l">体育</div>
+                                        <div class="showpick_r">BB,MG2</div>
+                                    </div> -->
+                                    <game-picker *ngFor='let o of [{head:"体育", items:["BB","MG2"]},{head:"3D", items:["PT2","35ing"]},{head:"AG", items:["捕魚","老虎機"]}]' [head]='o.head' [itemsString]='o.items.join(",")'></game-picker>
+                                </div>
+                                <!-- show pick sort//-->
+
+                                <div class="txt-r line_up mt-10"><button class="dspin-b mlr-5" id=''>全选</button> <button class="dspin-b mlr-5" id=''>清除</button> <button class="dspin-b mlr-5 bgliyl" id=''>开始查询</button></div>
+                            </div>
+                            <!-- 游戏種類 panel_sort 游戏種類 panel_sort 游戏種類 //-->
+                        </div>
+                        <!--  panel_sort 游戏種類 panel_sort 游戏種類 //-->

@@ -1,0 +1,350 @@
+<!-- .dashboardContent start -->
+<main class="dashboardContent">
+  <!-- .dashboardPanel start -->
+  <section class="dashboardPanel clearFix">
+
+    <!-- .selectPanel start -->
+    <div class="selectPanel">
+      <div class="tabs">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">今日</a></li>
+            <li class="page-item"><a class="page-link" href="#">昨日</a></li>
+            <li class="page-item"><a class="page-link" href="#">本周</a></li>
+            <li class="page-item"><a class="page-link" href="#">上周</a></li>
+            <li class="page-item"><a class="page-link" href="#">本月</a></li>
+            <li class="page-item"><a class="page-link" href="#">上月</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="daterangepicker_input clearFix">
+        <span style="margin-right:10px">日期</span>
+        <div class="daterangepicker_start">
+          <input class="form" type="text" name="daterangepicker_start" value="2017-04-10">
+        </div>
+        <span>-</span>
+        <div class="daterangepicker_end">
+          <input class="form" type="text" name="daterangepicker_end" value="2017-04-10" style="margin-right:10px">
+        </div>
+        <button class="btnPosition">查询</button>
+      </div>
+      <div class="show clearFix">
+        <span>查询结果：2017-04-09 至 2017-04-15</span>
+        <button class="btn_close">X</button>
+      </div>
+    </div>
+    <!-- .selectPanel end -->
+
+    <!-- .profitPanel start -->
+    <div class="profitPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">损益</p>
+          <p class="data">5,818,974,888.24</p>
+        </div>
+        <div class="up">
+          <div class="icon icon-up"></div>230<span>%</span></div>
+        <canvas class="canvasA" width="240" height="160" style="background-color:#223333"></canvas>
+        <canvas class="canvasB" width="240" height="110" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .profitPanel end -->
+    <!-- .effectivePanel start -->
+    <div class="effectivePanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">有效投注</p>
+          <p class="data">126,005.17</p>
+        </div>
+        <div class="down">
+          <div class="icon icon-down"></div>25<span>%</span></div>
+        <canvas class="canvasA" width="240" height="160" style="background-color:#223333"></canvas>
+        <canvas class="canvasB" width="240" height="110" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .effectivePanel end -->
+    <!-- .betPanel start -->
+    <div class="betPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">投注单量</p>
+          <p class="data">34,522</p>
+        </div>
+        <div class="up">
+          <div class="icon icon-up"></div>29<span>%</span></div>
+        <canvas class="canvasA" width="240" height="160" style="background-color:#223333"></canvas>
+        <canvas class="canvasB" width="240" height="110" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .betPanel end -->
+    <!-- .reportPanel start -->
+    <div class="reportPanel">
+      <div class="panel">
+        <header>
+          <div class="title">娱乐城管理报表</div>
+        </header>
+        <article>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>游戏种类</th>
+                  <th>损益</th>
+                  <th>有效投注</th>
+                  <th>营收比</th>
+                  <th>注单量</th>
+                  <th>会员数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>总计</th>
+                  <td>4,971.66</td>
+                  <td>9,491.45</td>
+                  <td>52.38%</td>
+                  <td>2,873</td>
+                  <td>57</td>
+                </tr>
+                <tr>
+                  <th>彩票</th>
+                  <td>1,357.11</td>
+                  <td>1,222.02</td>
+                  <td>111.05%</td>
+                  <td>47</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <th>视讯</th>
+                  <td>2,098.57</td>
+                  <td>4,801.38</td>
+                  <td>43.71%</td>
+                  <td>221</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <th>机率</th>
+                  <td>1,537.90</td>
+                  <td>3,344.00</td>
+                  <td>45.99%</td>
+                  <td>2,575</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <th>体育</th>
+                  <td>-21.92</td>
+                  <td>124.05</td>
+                  <td>-17.67%</td>
+                  <td>30</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- .reportPanel end -->
+    <!-- .ratioPanel start -->
+    <div class="ratioPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">营收比</p>
+        </div>
+        <canvas width="400" height="240" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .ratioPanel end -->
+    <!-- .memberPanel start -->
+    <div class="memberPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">有效投注会员</p>
+        </div>
+        <canvas width="400" height="220" style="background-color:#223333"></canvas>
+        <ul class="data">
+          <li>
+            <div class="swatch" style="background-color: rgb(51, 136, 221)"></div>当期会员数 32,151</li>
+          <li>
+            <div class="swatch" style="background-color: rgb(221, 85, 17)"></div>前期会员数 27,759</li>
+        </ul>
+      </div>
+    </div>
+    <!-- .memberPanel end -->
+
+    <!-- .m_selectPanel start -->
+    <div class="m_selectPanel">
+      <div class="tabs">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">今日</a></li>
+            <li class="page-item"><a class="page-link" href="#">昨日</a></li>
+            <li class="page-item"><a class="page-link" href="#">本周</a></li>
+            <li class="page-item"><a class="page-link" href="#">上周</a></li>
+            <li class="page-item"><a class="page-link" href="#">本月</a></li>
+            <li class="page-item"><a class="page-link" href="#">上月</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="tabsDorpdown">
+        <select class="">
+<option selected>今日</option>
+<option>昨日</option>
+<option>本周</option>
+<option>上周</option>
+<option>本月</option>
+<option>上月</option>
+</select>
+      </div>
+      <div class="daterangepicker_input clearFix">
+        <span style="margin-right:10px">日期</span>
+        <div class="daterangepicker_start">
+          <input class="form" type="text" name="daterangepicker_start" value="2017-04-10">
+        </div>
+        <span>-</span>
+        <div class="daterangepicker_end">
+          <input class="form" type="text" name="daterangepicker_end" value="2017-04-10" style="margin-right:10px">
+        </div>
+        <button class="btnPosition">查询</button>
+      </div>
+      <div class="show clearFix">
+        <span>查询结果：2017-04-09 至 2017-04-15</span>
+        <button class="btn_close">X</button>
+      </div>
+    </div>
+    <!-- .m_selectPanel end -->
+    <!-- .m_effectivePanel start -->
+    <div class="m_effectivePanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">有效投注</p>
+          <p class="data">126,005.17</p>
+        </div>
+        <canvas class="canvasB" width="240" height="110" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_effectivePanel end -->
+    <!-- .m_betPanel start -->
+    <div class="m_betPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">投注单量</p>
+          <p class="data">34,522</p>
+        </div>
+        <canvas class="canvasB" width="240" height="110" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_betPanel end -->
+    <!-- .m_profitPanel start -->
+    <div class="m_profitPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">损益</p>
+          <p class="data">5,818,974,888.24</p>
+          <p class="data" style="font-size:14px;color:#44bbcc">前期 974,888.24</p>
+        </div>
+        <div class="up">
+          <div class="icon icon-up"></div>230<span>%</span></div>
+        <canvas class="canvasA" width="240" height="160" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_profitPanel end -->
+    <!-- .m_ratioPanel start -->
+    <div class="m_ratioPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">营收比</p>
+        </div>
+        <canvas width="110" height="210" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_ratioPanel end -->
+    <!-- .m_reportPanel start -->
+    <div class="m_reportPanel">
+      <div class="panel">
+        <header>
+          <div class="title">娱乐城管理报表</div>
+        </header>
+        <article>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>游戏种类</th>
+                  <th>损益</th>
+                  <th>有效投注</th>
+                  <th>营收比</th>
+                  <th>注单量</th>
+                  <th>会员数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>总计</th>
+                  <td>4,971.66</td>
+                  <td>9,491.45</td>
+                  <td>52.38%</td>
+                  <td>2,873</td>
+                  <td>57</td>
+                </tr>
+                <tr>
+                  <th>彩票</th>
+                  <td>1,357.11</td>
+                  <td>1,222.02</td>
+                  <td>111.05%</td>
+                  <td>47</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <th>视讯</th>
+                  <td>2,098.57</td>
+                  <td>4,801.38</td>
+                  <td>43.71%</td>
+                  <td>221</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <th>机率</th>
+                  <td>1,537.90</td>
+                  <td>3,344.00</td>
+                  <td>45.99%</td>
+                  <td>2,575</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <th>体育</th>
+                  <td>-21.92</td>
+                  <td>124.05</td>
+                  <td>-17.67%</td>
+                  <td>30</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- .m_reportPanel end -->
+    <!-- .m_memberPanel start -->
+    <div class="m_memberPanel">
+      <div class="panel">
+        <div class="box clearFix">
+          <canvas width="310" height="110" style="background-color:#223333;margin-right:20px"></canvas>
+          <div class="info">
+            <p class="title">有效投注会员</p>
+            <ul class="data">
+              <li>
+                <div class="swatch" style="background-color: rgb(51, 136, 221)"></div>当期会员数 32,151</li>
+              <li>
+                <div class="swatch" style="background-color: rgb(221, 85, 17)"></div>前期会员数 27,759</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .m_memberPanel end -->
+
+  </section>
+  <!-- .dashboardPanel end -->
+</main>
+<!-- .dashboardContent end -->>

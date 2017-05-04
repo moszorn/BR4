@@ -1,0 +1,449 @@
+    @charset "utf-8";
+    /************* 版面設定 ***********/
+    
+    .gameContent {
+        background-color: #ecf2f6;
+        padding: 5px;
+    }
+    
+    .col-md-4,
+    .col-md-8 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .mt-05 {
+        margin-top: 5px
+    }
+    
+    .mt-10 {
+        margin-top: 10px
+    }
+    
+    .mt-20 {
+        margin-top: 20px
+    }
+    
+    .mt-30 {
+        margin-top: 30px
+    }
+    
+    .mlr-5 {
+        margin: auto 5px;
+    }
+    
+    .mlr-15 {
+        margin: auto 15px;
+    }
+    
+    .pd-10 {
+        padding: 10px
+    }
+    
+    .plr-15 {
+        padding: auto 15px;
+    }
+    
+    .ptd-10 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .lh_30 {
+        line-height: 30px
+    }
+    
+    .pd-20 {
+        padding: 20px
+    }
+    
+    .not_wrap {
+        word-wrap: nowrap;
+    }
+    
+    .bgeee {
+        background: #ecf2f6;
+    }
+    
+    .txt-l {
+        text-align: left;
+    }
+    
+    .txt-r {
+        text-align: right;
+    }
+    
+    .t-center {
+        text-align: center;
+    }
+    
+    .clear {
+        clear: both
+    }
+    /********** gameTabs **********/
+    
+    .gameTabs {
+        /*margin: -10px 10px 10px 10px;*/
+        position: relative;
+        text-align: right;
+    }
+    
+    .nav-tabs-xs {
+        line-height: 23px;
+        border-bottom: 1px solid #d4d4e4;
+        margin-bottom: 10px;
+    }
+    
+    .nav-tabs-xs li {
+        width: 33%;
+        text-align: center;
+    }
+    
+    a.nav-link {
+        padding: 10px 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .nav-tabs-xs .nav-link {
+        border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom: none;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-top-right-radius: .25rem;
+        border-top-left-radius: .25rem;
+    }
+    
+    .nav-tabs-xs .nav-link:hover {
+        border-color: #d4d4e4;
+    }
+    
+    .nav-tabs-xs .nav-link.active {
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #44bbcc;
+        border-color: #44bbcc;
+    }
+    
+    .nav-tabs-xs a {
+        color: #44bbcc;
+    }
+    
+    .gameTabs .btnPosition {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .gamePanel .list {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .gamePanel .list .flip {
+        display: inline-block;
+    }
+    /********** report **********/
+    
+    .reportContent {
+        background-color: #ecf2f6;
+        padding: 20px;
+    }
+    
+    .reportPanel,
+    .reportPanel .list {
+        width: 100%;
+    }
+    
+    .reportPanel .panel {
+        width: 300px;
+        margin: 10px;
+        float: left;
+        position: relative;
+    }
+    
+    .reportPanel .panel .info {
+        background-color: #FFF;
+        border-radius: 5px;
+        padding: 15px 20px 10px 20px;
+    }
+    
+    .reportPanel .panel .info .title {
+        font-size: 20px;
+        color: #334455;
+        line-height: 30px;
+    }
+    
+    .reportPanel .panel .info .data {
+        font-size: 16px;
+        color: #44bbcc;
+        line-height: 22px;
+    }
+    
+    .reportPanel .panel .info .up {
+        font-size: 45px;
+        color: #ff5454;
+        line-height: 45px;
+        position: relative;
+        padding: 15px 0 0 20px;
+        letter-spacing: -2px;
+    }
+    
+    .reportPanel .panel .info .up span {
+        font-size: 13px;
+        color: #ff5454;
+        margin-left: 4px;
+    }
+    
+    .reportPanel .panel .info .down {
+        font-size: 45px;
+        color: #77cc55;
+        line-height: 45px;
+        position: relative;
+        padding: 15px 0 0 20px;
+        letter-spacing: -2px;
+    }
+    
+    .reportPanel .panel .info .down span {
+        font-size: 13px;
+        color: #77cc55;
+        margin-left: 4px;
+    }
+    
+    .reportPanel .panel .icon {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+    
+    .reportPanel .panel .btnPosition {
+        position: absolute;
+        bottom: 18px;
+        right: 15px;
+    }
+    
+    .reportList {
+        /* height: 460px;  */
+        /*margin: 0 10px 15px -10px;*/
+    }
+    
+    .reportList header {
+        /*background-color: #99aacc;*/
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .reportList .line-chart {
+        padding-top: 15px
+    }
+    
+    .reportList header .listA,
+    .reportList header .listB,
+    .reportList header .listC,
+    .reportList header .listD,
+    .reportList header .listE {
+        height: 60px;
+        padding: 0 25px;
+    }
+    
+    .reportList header .listA {
+        background-color: #22a8d8;
+    }
+    
+    .reportList header .listB {
+        background-color: #ff5454;
+    }
+    
+    .reportList header .listC {
+        background-color: #77c444;
+    }
+    
+    .reportList header .listD {
+        background-color: #66ccee;
+    }
+    
+    .reportList header .listE {
+        background-color: #ee9900;
+    }
+    
+    .reportList header .title {
+        font-size: 20px;
+        color: #FFF;
+        line-height: 60px;
+        float: left;
+    }
+    
+    .reportList header .tab {
+        float: right;
+        margin-top: 12px;
+    }
+    
+    .reportList header .tab li {
+        float: left;
+    }
+    
+    .reportList header .tab li a {
+        font: 14px;
+        color: #ddeeff;
+        line-height: 35px;
+        display: block;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+    }
+    
+    .reportList header .tab li a:hover,
+    .reportList header .tab li a:active,
+    .reportList header .tab li a.active {
+        color: #ffffff;
+        text-decoration: none;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+    }
+    
+    .reportList article {
+        background-color: #FFF;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 10px 15px 8px 0px;
+    }
+    
+    .reportList .table thead th {
+        color: #445555;
+        font-weight: normal;
+        border-top: none;
+    }
+    
+    .reportList .table tbody th {
+        color: #334455;
+    }
+    
+    .reportList .table tbody td {
+        color: #445555;
+    }
+    
+    .reportList .table thead th,
+    .reportList .table td,
+    .table th {
+        border-color: #e4eff6;
+    }
+    
+    .table th {
+        text-align: center;
+    }
+    /*************gamerport_right_Tabs**************/
+    
+    .gamerport_right_Tabs {
+        border-radius: 8px;
+        background: #FFF;
+        padding: 15px;
+    }
+    
+    .gamerport_right_Tabs .title {
+        margin: 10px 0px;
+        font-weight: 800;
+        line-height: 30px;
+    }
+    
+    .gamerp_r_line .more_tack {
+        position: absolute;
+        top: 238px;
+        right: 53px;
+        z-index: 3
+    }
+    
+    .gamerport_right_Tabs #line_payoff {
+        height: 130px;
+        margin: 10px 0 30px 0;
+    }
+    
+    .gamerport_right_Tabs .title::before {
+        content: '■';
+        line-height: 30px;
+        color: #44bbcc;
+    }
+    
+    .gamerport_right_Tabs .gamerp_r_table {
+        margin: 0 0 10px 0;
+        width: 100%;
+        height: 225px;
+    }
+    
+    .gamerport_right_Tabs .gamerp_r_table:last-child {
+        margin-bottom: -3px
+    }
+    /********* chart-line ******************/
+    
+    .line-chart {
+        width: 100%;
+        height: 180px;
+    }
+    /*************** RWD-1000px ***************/
+    
+    @media screen and (max-width:1000px) {
+        .wrapper {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .reportPanel .list .panel {
+            width: 48%;
+            margin: 1% 1% 10px 1%;
+        }
+        .hiden_767 {
+            display: table-cell;
+        }
+    }
+    /*************** RWD-767px ***************/
+    
+    @media screen and (max-width:767px) {
+        .reportPanel .list .panel {
+            width: 98%;
+            margin: 1% 1% 10px 1%;
+        }
+        .hiden_767 {
+            display: none;
+        }
+        .reportList article {
+            background-color: #FFF;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 5px;
+        }
+        .gamerport_right_Tabs {
+            padding: 10px;
+        }
+        .gamerport_right_Tabs .gamerp_r_table {
+            margin: 0px 0 15px 0;
+        }
+        .col-md-4,
+        .col-md-8 {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+    }
+    /*************** RWD-320px ***************/
+    
+    @media screen and (max-width:320px) {
+        .reportList article {
+            background-color: #FFF;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 5px 3px 5px 3px;
+        }
+        .gamerport_right_Tabs {
+            padding: 7px;
+        }
+    }
+    /***************when data loading , blur table  ***************/
+    
+    .blurTable {
+        background-size: cover;
+        display: block;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+        z-index: 1;
+    }

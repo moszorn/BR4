@@ -1,0 +1,346 @@
+    @charset "utf-8";
+    /************* 版面設定 ***********/
+    
+    .mt-05 {
+        margin-top: 5px
+    }
+    
+    .mt-10 {
+        margin-top: 10px
+    }
+    
+    .mt-30 {
+        margin-top: 30px
+    }
+    
+    .mlr-5 {
+        margin: auto 5px;
+    }
+    
+    .mlr-15 {
+        margin: auto 15px;
+    }
+    
+    .pd-10 {
+        padding: 10px
+    }
+    
+    .plr-15 {
+        padding: auto 15px;
+    }
+    
+    .ptd-10 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .lh_30 {
+        line-height: 30px
+    }
+    
+    .lh_40 {
+        line-height: 40px
+    }
+    
+    .pd-20 {
+        padding: 20px
+    }
+    
+    .not_wrap {
+        word-wrap: nowrap;
+    }
+    
+    .area_rsearch {
+        font-size: 1.2rem;
+        border-radius: 10px;
+    }
+    
+    .bgliyl {
+        background: #fff6D0;
+    }
+    
+    .bglitblue {
+        background: #d0f9ff;
+    }
+    
+    .bgeee {
+        background: #ecf2f6;
+    }
+    
+    .txt-l {
+        text-align: left;
+    }
+    
+    .txt-r {
+        text-align: right;
+    }
+    
+    .t-center {
+        text-align: center;
+    }
+    
+    .dspin-b {
+        display: inline-block;
+        margin: 5px;
+    }
+    
+    .pprs {
+        position: relative;
+        line-height: 36px;
+    }
+    
+    .dp_area,
+    datepicker {
+        position: absolute;
+        z-index: 9;
+        /*top: 30px;
+        left: 10px;*/
+        line-height: 20px;
+    }
+    
+    .line_up {
+        padding-top: 3px;
+        border-top: 1px solid #DDF
+    }
+    /*********** BTN & FROM ************/
+    
+    .rsearch_name_panel button.active {
+        background: #44bbcc;
+        color: #fff
+    }
+    
+    .rsearch_name_panel button.w75 {
+        width: 75px
+    }
+    
+    .rsearch_name_panel button.w75.active {
+        background: #44bbcc;
+        color: #fff
+    }
+    
+    .rsearch_name_panel button.wh {
+        color: #666;
+        background: #fff;
+        border: 1px solid #DFDFDF;
+        border-radius: 2px;
+        width: 75px;
+        height: 36px;
+        line-height: 36px;
+        margin-right: 5px;
+    }
+    
+    .rsearch_name_panel button.wh.active {
+        background: #ccffff;
+        color: #49bdce;
+        border-color: #5cc3d2;
+    }
+    
+    .rsearch_name_panel input {
+        border: 1px solid #CCC;
+    }
+    
+    .sch_form select,
+    .sch_form select.form-control,
+    .sch_form textarea,
+    .sch_form textarea.form-control,
+    .sch_form input[type='text'],
+    .sch_form input[type='email'],
+    .sch_form input[type='number'],
+    .sch_form input[type='password'],
+    .sch_form input[type='telephone'] {
+        vertical-align: bottom;
+        /*border: none;*/
+        border: 1px solid #CCC;
+        /*margin-top: 7px;*/
+        line-height: 30px;
+        height: 31px;
+        margin: 5px 2px;
+    }
+    
+    .rsearch_name_panel .rsearch_panel {
+        overflow-y: auto;
+        height: 192px;
+    }
+    
+    .rsearch_name_panel {
+        min-height: 40px;
+        height: auto;
+    }
+    
+    .rsearch_name_panel select,
+    .rsearch_name_panel input {
+        height: 30px;
+        border: 1px solid #EEE;
+        vertical-align: top;
+        margin: 5px 2px;
+    }
+    
+    .rsearch_name_panel select {
+        width: 100%;
+    }
+    
+    .rsearch_name_panel .rsearch_name_panel input {
+        width: 100%;
+    }
+    
+    .rsearch_name_panel .big_castle {
+        width: 95px;
+    }
+    
+    .rsearch_name_panel input {
+        line-height: 26px;
+        padding: 4px 5px;
+        text-align: center;
+    }
+    
+    .rsearch_name_panel .date_input {
+        width: 110px;
+        border-radius: 3px;
+    }
+    
+    .area_rsearch_panel {
+        background-color: #F6F6FA;
+        border-radius: 2px;
+        margin-bottom: 15px;
+    }
+    
+    .Gtable_dtl {
+        margin-left: 15px
+    }
+    
+    .sch_form .Gtable_dtl tr td {}
+    
+    .table_rline {
+        border-right: 1px solid #DDF;
+    }
+    
+    .btnbg1_yl {
+        background: linear-gradient(171deg, rgba(246, 231, 163, 1)47%, rgba(240, 228, 163, 0.8)78%);
+        background: -moz-linear-gradient(171deg, rgba(246, 231, 163, 1)47%, rgba(240, 228, 163, 0.8)78%);
+        background: -webkit-linear-gradient(171deg, rgba(246, 231, 163, 1)47%, rgba(240, 228, 163, 0.8)78%);
+        background: -o-linear-gradient(171deg, rgba(246, 231, 163, 1)47%, rgba(240, 228, 163, 0.8)78%);
+    }
+    
+    .btnPosition_sd:hover,
+    .btnPosition_send:hover {
+        color: #333;
+    }
+    
+    .showpick {
+        border: 1px solid #44bbcc;
+        display: inline-block;
+        border-radius: 2px;
+        margin: 3px auto;
+        margin-right: 3px;
+    }
+    
+    .panel__showpick .showpick_l {
+        display: inline-block;
+        width: 42px;
+        padding: 5px 0;
+        text-align: center;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        color: #fff;
+        background: #44bbcc;
+    }
+    
+    .panel__showpick .showpick_r {
+        display: inline-block;
+        margin-left: -5px;
+        width: auto;
+        padding: 5px 8px;
+        text-align: center;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        color: #49bdce;
+        background: #ccffff;
+    }
+    
+    .panel__showpick {
+        /*display: none*/
+    }
+    
+    .rsearch_name_panel>.col-md-4 {
+        padding-right: 6px;
+    }
+    
+    .rsearch_name_panel>.col-md-3 {
+        padding-left: 3px;
+        padding-right: 3px
+    }
+    
+    .rsearch_name_panel .button_sort,
+    .rsearch_name_panel .button_sort2 {
+        margin: 10px 0;
+    }
+    
+    .rsearch_name_panel .button_sort2 {
+        border-top: 1px solid #EAEAEA;
+    }
+    /********** report **********/
+    
+    .rsearch_name_panel {
+        background-color: #fff;
+        padding: 0 25px;
+        border-radius: 10px;
+    }
+    /*************** RWD-767px ***************/
+    
+    @media screen and (max-width:767px) {
+        .rsearch_name_panel .table_button {
+            border-top: 1px dashed #DDD;
+            margin: 7px 0;
+        }
+        .sch_header>.pd-10 {
+            padding: 5px
+        }
+        .rsearch_name_panel>.col-md-4 {
+            padding-right: 15px;
+        }
+        .rsearch_name_panel>.col-md-3 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .sch_form .rsearch_panel .table_rline {
+            border: none
+        }
+        .sch_form .rsearch_panel .table_button:first-child {
+            border-top: none
+        }
+        .sch_header .date_input {
+            width: 90px;
+        }
+        .reportPanel .list .panel {
+            width: 98%;
+            margin: 1% 1% 10px 1%;
+        }
+        /*** button **/
+        .sch_header .area_rsearch_panel .big_castle {
+            width: 75px
+        }
+        .sch_header button.active {
+            background: #44bbcc;
+            color: #fff
+        }
+        .sch_header button.w75 {
+            width: 65px
+        }
+        .sch_header button.w75.active {
+            background: #44bbcc;
+            color: #fff
+        }
+        .sch_header button.wh {
+            color: #666;
+            background: #fff;
+            border: 1px solid #DFDFDF;
+            border-radius: 2px;
+            width: 65px;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 3px;
+        }
+        .dspin-b {
+            margin-right: 2px
+        }
+    }

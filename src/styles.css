@@ -1,0 +1,549 @@
+﻿/* You can add global styles to this file, and also import other style files */
+
+@charset "utf-8";
+* {
+    font-family: Microsoft YaHei, Tahoma, SimSun, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #8899aa;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+a,
+button {
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+button {
+    line-height: 34px;
+    background-color: #FFF;
+    padding: 0 15px;
+    border-radius: 20px;
+    border: 1px solid #d9e4eb;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #44bbcc;
+    border: 1px solid #44bbcc;
+}
+
+.txt_l {
+    text-align: left;
+}
+
+.txt_r {
+    text-align: right;
+}
+
+
+/********** SVG-icon ***********/
+
+.icon-logo {
+    width: 75px;
+    height: 32px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_logo.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_logo.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #cacaca;
+}
+
+.nav-report {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/nav_report.svg) no-repeat 50% 50%;
+    mask: url(assets/images/nav_report.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #5f5f5f;
+    margin: 4px 2px 3px 2px;
+}
+
+.icon-up {
+    width: 15px;
+    height: 8px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_up.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_up.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ff5454;
+    position: absolute;
+    top: 35px;
+    left: 0;
+}
+
+.icon-down {
+    width: 15px;
+    height: 8px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_down.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_down.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #77cc55;
+    position: absolute;
+    top: 35px;
+    left: 0;
+}
+
+.icon-profit {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_profit.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_profit.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-bet {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_bet.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_bet.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-income {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_income.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_income.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-deposit {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_deposit.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_deposit.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-newMember {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_newmember.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_newmember.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-newMember-Deposit {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_newmemberdeposit.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_newmemberdeposit.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-active {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_active.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_active.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-stickiness {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_stickiness.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_stickiness.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-lost {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_lost.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_lost.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-contribution {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_contribution.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_contribution.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-lossofDeposit {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_lossofdeposit.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_lossofdeposit.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-addDeposit {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_adddeposit.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_adddeposit.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-activeContribution {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_activecontribution.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_activecontribution.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-value {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_value.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_value.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+.icon-life {
+    width: 55px;
+    height: 50px;
+    display: inline-block;
+    -webkit-mask: url(assets/images/icon_life.svg) no-repeat 50% 50%;
+    mask: url(assets/images/icon_life.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #ccccdd;
+}
+
+
+/************* ng2 component 專用設定區  *****/
+
+
+/**** Index Flip nv3d ***/
+
+.flip .card .back .info {
+    width: 100%;
+    height: 140px !important;
+    padding: 0 40px !important;
+}
+
+.flip .card .back .info .title {
+    /* 讓卡牌字正確顯示*/
+    margin: auto -40px;
+}
+
+.flip .card .back .info svg.nvd3-svg {
+    width: 100% !important;
+    height: 70px !important;
+    overflow: visible;
+}
+
+.flip .card .back .info .nv-valueWrap>text {
+    visibility: hidden;
+}
+
+.flip .card .back .info text {
+    fill: #53c0d0;
+}
+
+.flip .card .back .info .nv-sparklineWrap {
+    margin: 0 -20px;
+}
+
+
+/**************首頁 ngx SETTING 圖表專用設定 *************/
+
+.green {
+    color: #57cc57;
+}
+
+.red {
+    color: red
+}
+
+.lblue {
+    color: #44bbcc;
+}
+
+
+/*首頁圖表BUG黑眼淚覆蓋*/
+
+.profitPanel .ngx-charts .bar:hover,
+.effectivePanel .ngx-charts .bar:hover,
+.betPanel .ngx-charts .bar:hover {
+    fill: #66DDEE!important;
+}
+
+.profitPanel .ngx-charts .bar-chart g,
+.effectivePanel .ngx-charts .bar-chart g,
+.betPanel .ngx-charts .bar-chart g {
+    fill: #056 !important;
+}
+
+.ngx-charts .tooltip-anchor {
+    fill: #3ab !important;
+}
+
+
+/* 首頁儀表異常大黑字，設定隱藏 */
+
+.dashboardPanel .ngx-charts g.gauge>text {
+    display: none
+}
+
+
+/* 首頁營收比項目設定*/
+
+#t_cpul .tcp_span {
+    display: block;
+    font-size: 1.8rem
+}
+
+.ngx-charts-outer g.tick text {
+    fill: #FFF
+}
+
+
+/** DashboardPanel Datepick */
+
+
+/*** 日曆後方BUTTON 隱  **/
+
+.dashboardPanel .selectPanel .daterangepicker_input span>a,
+.input-group span>a {
+    display: none
+}
+
+
+/*跳出日曆按鈕 顏色覆蓋*/
+
+.daterangepicker .btn-success,
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    background: #2297C7 !important;
+    color: #fff !important;
+}
+
+
+/* 活躍會員數 日期項目自定 */
+
+.trendmember_span {
+    display: inline-block
+}
+
+.trendmember_span.txt_l {
+    width: 70%
+}
+
+.trendmember_span.txt_r {
+    width: 30%
+}
+
+g.line-chart.chart g g g {
+    fill: rgba(255, 255, 255, .5) !important;
+    /*background: #2297C7!important;*/
+}
+
+
+/*  dmember.component會員進階查詢，表格對齊  **/
+
+.sch_table_td div {
+    text-align: right;
+}
+
+.sch_table_hear div {
+    display: table-cell;
+    height: 45px;
+    vertical-align: middle;
+}
+
+
+/**** Game ngx-chart ***/
+
+.line-chart g.tick text {
+    fill: #fff;
+    font-size: .9rem !important;
+    -ms-transform: rotate(0deg) !important;
+    /* IE 9 */
+    -webkit-transform: rotate(0deg) !important;
+    /* Safari 和 Chrome */
+    -o-transform: rotate(0deg) !important;
+    /* Opera */
+    transform: none !important;
+    -moz-transform: none !important;
+    -moz-transform: rotate(0deg) !important;
+    /* Firefox */
+}
+
+.line-chart .ngx-charts .tooltip-anchor {
+    fill: #777;
+}
+
+.line-chart .y.axis g>g {
+    /*min-width: 36px*/
+}
+
+
+/** 遊戲報表 width:105 避免被吃日期 */
+
+#line-chartA .ngx-charts,
+#line-chartB .ngx-charts,
+#line-chartC .ngx-charts,
+#line-chartD .ngx-charts,
+#line-chartE .ngx-charts {
+    margin: 0px;
+    width: 103%;
+}
+
+#line-chartA .ngx-charts g.tick text,
+#line-chartB .ngx-charts g.tick text,
+#line-chartC .ngx-charts g.tick text,
+#line-chartD .ngx-charts g.tick text,
+#line-chartE .ngx-charts g.tick text {
+    fill: #999;
+}
+
+#index_line .ngx-charts g.tick text {
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.chart-legend .legend-labels {
+    overflow-x: auto;
+    margin-left: -20px;
+    white-space: normal;
+    min-width: 60px;
+}
+
+#pieA,
+#pieA .ngx-charts-outer {
+    width: 105% !important;
+}
+
+#pieA .chart-legend .legend-title {
+    display: none
+}
+
+#pieA .chart-legend .legend-wrap {
+    min-width: 80px;
+}
+
+#pieA .chart-legend .legend-labels {
+    background: rgba(0, 0, 0, 0);
+}
+
+#pieA .ngx-charts {
+    margin-left: -23px;
+}
+
+#pieA .ngx-charts g.pie-chart g {
+    margin-left: -20px
+}
+
+
+/*
+.pie-chart .pie-label,
+.pie-chart .pie-label-line {
+    display: none
+}*/
+
+
+/********** clearFix ***********/
+
+.clearFix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearFix {
+    display: inline-block;
+}
+
+html[xmlns] .clearFix {
+    display: block;
+}
+
+* html .clearFix {
+    height: 1%;
+}
+
+
+/*************** RWD-1000px ***************/
+
+@media screen and (max-width:1000px) {
+    /** Game X Axis label hidden **/
+    .line-chart .x.axis g.tick text {
+        display: none;
+    }
+}
+
+
+/*.betPanel .ngx-charts .bar-chart g:last-child {
+    fill: #FFF !important;
+}*/

@@ -1,0 +1,63 @@
+<main class="reportContent">
+    <!-- .reportPanel start -->
+    <section class="reportPanel">
+        <div class="list clearFix">
+            <!-- Cards goes here -->
+            <div class="panel" *ngFor='let card of cards'>
+                <div class="deposit">
+                    <div class="info" [tooltip]='card.tooltip' placement="bottom">
+                        <p class="title">{{card.displayName}}</p>
+                        <p class="data">{{card.value | number : '1.0'}}</p>
+                        <div [ngClass]="{'up': isTrendRising(card.trend),'down':!isTrendRising(card.trend)}">
+                            <div [ngClass]="{'icon-up': isTrendRising(card.trend),'icon-down':!isTrendRising(card.trend)}"></div>{{card.trend}}<span>%</span></div>
+                    </div>
+                    <div class="icon" [ngClass]='getIconClass(card.name)'></div>
+                    <button *ngIf='card.name.includes("NewMember") || card.name.includes("FirstDepositMember")' class="btnPosition" [routerLink]='[ "/br/MembersInfo", (card.name.includes("NewMember")?"n":"d") ]'>进阶查询</button>
+                </div>
+            </div>
+            <!-- eod of card -->
+        </div>
+    </section>
+    <!-- .reportPanel end -->
+    <!-- .reportList start -->
+    <section class="reportList">
+        <header>
+            <div class="title">会员报表</div>
+            <ul class="tab">
+                <li><img src='/assets/images/spin-loading.svg' *ngIf='isTabularQuery' width='40' height='40' /></li>
+                <li><a [routerLink]='[ "/br/Report", "D" ]' routerLinkActive="active" (click)='query_Day_Week_Month($event)'>日</a></li>
+                <li><a [routerLink]='[ "/br/Report", "W" ]' routerLinkActive="active" (click)='query_Day_Week_Month($event)'>周</a></li>
+                <li><a [routerLink]='[ "/br/Report", "M" ]' routerLinkActive="active" (click)='query_Day_Week_Month($event)'>月</a></li>
+            </ul>
+        </header>
+        <article>
+            <div class="table-responsive" [ngClass]="{'blurTable':isTabularQuery}">
+                <table class="table t_h2">
+                    <thead>
+                        <tr>
+                            <th width="15%">項目</th>
+                            <th>本{{column_head1}}</th>
+                            <th>上{{column_head1}}</th>
+                            <th>前{{column_head1}}</th>
+                            <th width="20%">成长%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr *ngFor='let entry of entries' [ngClass]="{red: entry.index <6 , gray: 5 < entry.index && entry.index < 10 , green: entry.index > 9}">-->
+                        <tr *ngFor='let entry of entries' [ngClass]="{ gray: 5 < entry.index && entry.index < 10 }">
+                            <td align='left'>{{entry.displayName}}</td>
+                            <td align='right'>{{ entry.displayName.includes('人') || entry.displayName.includes('會員') ? (entry.today | number : '1.0') : (entry.today |number : '1.2-2') }}</td>
+                            <td align='right'>{{ entry.displayName.includes('人') || entry.displayName.includes('會員') ? (entry.yesterday | number : '1.0') : (entry.yesterday |number : '1.2-2')}}</td>
+                            <td align='right'>{{ entry.displayName.includes('人') || entry.displayName.includes('會員') ? (entry.theDayBeforeYesterday| number : '1.0'): (entry.theDayBeforeYesterday |number : '1.2-2')}}</td>
+                            <td align='right'>{{ growthRate(entry.today , entry.yesterday) | number : '1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+    <!-- .reportList end -->
+</main>
+<!-- .reportContent end -->
+
+<ng2-toasty></ng2-toasty>

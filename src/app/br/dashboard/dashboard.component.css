@@ -1,0 +1,646 @@
+﻿@charset "utf-8";
+
+/********** DashBoard **********/
+
+.clear {
+    clear: both
+}
+
+.mt-10 {
+    margin-top: 10px
+}
+
+.dashboardContent {
+    background-color: #353535;
+    padding: 20px;
+}
+
+.dashboardPanel .panel .tab {
+    width: 90%;
+    height: 36px;
+    border: 1px solid #445050;
+    border-radius: 20px;
+    position: absolute;
+    top: 310px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.dashboardPanel .panel .tab li {
+    width: 25%;
+    display: inline-block;
+    margin: 0 -2px;
+}
+
+.dashboardPanel .panel .tab li a {
+    font-size: 16px;
+    color: #8899aa;
+    line-height: 32px;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 0 16px;
+    text-decoration: none;
+}
+
+.dashboardPanel .panel .tab li a:hover {
+    color: #44bbcc;
+    border: 1px solid #44bbcc;
+    border-radius: 20px;
+}
+
+.dashboardPanel .panel .tab li a.active {
+    color: #44bbcc;
+    border: 1px solid #44bbcc;
+    border-radius: 20px;
+}
+
+.dashboardPanel .panel .show_tabtype {
+    /*border-radius: 8px;*/
+    /*border-bottom: 1px solid #445050;*/
+    padding: 5px 10px 0 0;
+    width: 70%;
+    min-width: 120px;
+    max-width: 190px;
+    margin: 5px auto 0 auto;
+    float: left;
+    margin-top: -5px;
+    color: #EEF;
+    letter-spacing: .1rem;
+}
+
+.dashboardPanel .m_selectPanel,
+.dashboardPanel .m_profitPanel,
+.dashboardPanel .m_effectivePanel,
+.dashboardPanel .m_betPanel,
+.dashboardPanel .m_reportPanel,
+.dashboardPanel .m_ratioPanel,
+.dashboardPanel .m_memberPanel {
+    display: none;
+}
+
+.dashboardPanel .selectPanel {
+    width: 100%;
+    float: left;
+    padding: 0 10px;
+    margin-top: -6px;
+}
+
+.dashboardPanel .selectPanel .tabs,
+.dashboardPanel .selectPanel .daterangepicker_input {
+    float: left;
+    display: flex;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .uneditable-input {
+    height: 35px!important;
+    display: inline-block;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .btnPosition {
+    margin-left: 5px;
+    vertical-align: top;
+    margin-top: -3px;
+    background: #2297C7!important;
+    color: #fff!important;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .btnPosition:hover {
+    background: #555!important;
+}
+
+.dashboardPanel .selectPanel .tabs {
+    margin-right: 20px;
+}
+
+.dashboardPanel .tabs button {
+    /*border-radius: 0px;*/
+    background: #2b2b2b!important;
+}
+
+.dashboardPanel .tabs button.active {
+    background: #2297C7!important;
+    color: #fff!important;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input span,
+.dashboardPanel .selectPanel .daterangepicker_input div,
+.dashboardPanel .selectPanel .daterangepicker_input button {
+    float: left;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input span {
+    color: #5d6d6d;
+    line-height: 33px;
+    margin: 0 3px;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .form {
+    width: 110px;
+    color: #5d6d6d;
+    line-height: 34px;
+    text-align: center;
+    background-color: #223333;
+    border: 1px solid #445050;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .btnPosition {
+    color: #5d6d6d;
+    border: 1px solid #445050;
+    border-radius: 3px;
+}
+
+.dashboardPanel .selectPanel .daterangepicker_input .btnPosition:hover {
+    color: #44bbcc;
+    background-color: #445050;
+}
+
+.dashboardPanel .selectPanel .pagination a:hover {
+    color: #44bbcc;
+    background-color: #445050;
+}
+
+.dashboardPanel .selectPanel .pagination .page-link {
+    color: #5d6d6d;
+    line-height: 18px;
+    background-color: #223333;
+    border: 1px solid #445050;
+}
+
+.dashboardPanel .selectPanel .show {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #445050;
+    border-radius: 3px;
+    clear: both;
+    position: relative;
+    margin-top: 10px;
+}
+
+.dashboardPanel .selectPanel .show>span {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 38px;
+}
+
+.dashboardPanel .selectPanel .show>button {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
+.dashboardPanel .selectPanel .show .btn_close {
+    width: 20px;
+    height: 20px;
+    color: #223333;
+    font-weight: bold;
+    background-color: #445050;
+    border-color: transparent;
+    line-height: 20px;
+    padding: 0;
+}
+
+.dashboardPanel .profitPanel,
+.dashboardPanel .effectivePanel,
+.dashboardPanel .betPanel,
+.dashboardPanel .reportPanel,
+.dashboardPanel .ratioPanel,
+.dashboardPanel .memberPanel {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+.dashboardPanel .panel {
+    width: 300px;
+    text-align: center;
+    background-color: #1a1a22;
+    border-radius: 5px;
+    position: relative;
+    padding: 20px 15px 20px 10px;
+}
+
+.dashboardPanel .panel .title {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.dashboardPanel .panel .data {
+    font-size: 20px;
+    color: #44bbcc;
+}
+
+.dashboardPanel .panel .up {
+    font-size: 50px;
+    color: #ff5454;
+    line-height: 50px;
+    letter-spacing: -2px;
+    /* margin: 30px 0 0 0; */
+    position: absolute;
+    top: 115px;
+    right: 5px;
+    bottom: 0;
+    left: 0;
+    height: 117px;
+}
+
+.dashboardPanel .panel .up span {
+    font-size: 13px;
+    color: #ff5454;
+    margin-left: 4px;
+}
+
+.dashboardPanel .panel .down {
+    font-size: 50px;
+    color: #77cc55;
+    line-height: 50px;
+    letter-spacing: -2px;
+    position: absolute;
+    top: 115px;
+    right: 5px;
+    /*bottom: 0;*/
+    left: 0;
+    margin: auto;
+}
+
+.dashboardPanel .panel .down span {
+    font-size: 13px;
+    color: #77cc55;
+    margin-left: 4px;
+}
+
+.dashboardPanel .panel .down p,
+.dashboardPanel .panel .up p {
+    margin-top: -20px;
+    font-size: 1.4rem;
+    letter-spacing: 0.05px;
+}
+
+.dashboardPanel .ngx-charts g.gauge>text {
+    display: none
+}
+
+.dashboardPanel .ngx_unit {
+    text-align: right;
+    font-size: .9rem;
+    margin: 0;
+    margin-top: -30px;
+    padding: 0;
+    padding-right: 5px;
+}
+
+.dashboardPanel .panel .icon {
+    position: static;
+    margin: 5px 5px 5px 0;
+    vertical-align: middle;
+}
+
+.dashboardPanel .panel .canvasA {
+    margin-top: 10px;
+}
+
+.dashboardPanel .panel .canvasB {
+    margin: 50px 0 5px 0;
+}
+
+.dashboardPanel .reportPanel {
+    width: 100%;
+}
+
+.dashboardPanel .reportPanel .panel {
+    width: 940px;
+}
+
+.dashboardPanel .reportPanel header .title {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.dashboardPanel .reportPanel .table-responsive .table {
+    margin-bottom: 0;
+}
+
+.dashboardPanel .reportPanel .table thead th {
+    color: #44bbcc;
+    font-weight: normal;
+    border-top: none;
+}
+
+.dashboardPanel .reportPanel .table tbody th,
+.dashboardPanel .reportPanel .table tbody td {
+    color: #ffffff;
+    font-weight: normal;
+    /*text-align: left;*/
+}
+
+.dashboardPanel .reportPanel .table thead th,
+.reportPanel .table td,
+.table th {
+    border-color: #223333;
+}
+
+.dashboardPanel .panel .member_line {
+    height: 215px;
+    width: 100%;
+}
+
+.dashboardPanel .ratioPanel .panel,
+.dashboardPanel .memberPanel .panel {
+    width: 460px;
+    height: auto;
+}
+
+.dashboardPanel .ratioPanel .panel canvas {
+    margin: 10px 0;
+}
+
+.dashboardPanel .memberPanel .panel canvas {
+    margin-top: 10px;
+}
+
+.dashboardPanel .memberPanel .data {
+    font-size: 12px;
+    color: #ffffff;
+    margin: 5px 0 30px 5px;
+}
+
+.dashboardPanel .memberPanel .data li {
+    float: left;
+    margin-right: 15px;
+}
+
+.dashboardPanel .memberPanel .data .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 5px 5px 0 0;
+    float: left;
+}
+
+.dashboardPanel table tbody td {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.dashboardPanel table tbody th,
+.dashboardPanel table thead th {
+    text-align: center
+}
+
+.dashboardPanel .ratioPanel .bit_panel,
+.dashboardPanel .memberPanel .actmem_panel {
+    height: 320px
+}
+
+
+/**************** 表 **************/
+
+.t_h2 tr th,
+.t_h2 tr td {
+    font-size: 1.2rem;
+}
+
+#t_cp {
+    padding: 10px 0px;
+}
+
+#t_cp ngx-charts-outer {
+    display: block
+}
+
+#t_cpul {
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    display: block;
+    margin-left: 45px;
+    margin-right: 8px;
+}
+
+#t_cpul li {
+    color: #fff;
+    display: inline-block;
+    width: 19%;
+}
+
+
+/********** li 內的 Span 為編譯輸出，設定css 轉往 STYLES.CSS ************/
+
+
+/*************** RWD-1000px ***************/
+
+@media screen and (max-width:1000px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .dashboardContent {
+        padding: 0;
+    }
+    .dashboardPanel .selectPanel {
+        padding: 0 5px;
+        margin-top: 7px;
+    }
+    .dashboardPanel .profitPanel,
+    .dashboardPanel .effectivePanel,
+    .dashboardPanel .betPanel {
+        width: 33.333%;
+        padding: 5px;
+    }
+    .dashboardPanel .panel {
+        width: 100%;
+        height: auto;
+    }
+    .dashboardPanel .panel .up,
+    .dashboardPanel .panel .down {
+        top: 37%;
+    }
+    .dashboardPanel .panel .canvasA,
+    .dashboardPanel .panel .canvasB,
+    .dashboardPanel .panel .imgA,
+    .dashboardPanel .panel .imgB,
+    .dashboardPanel .ratioPanel canvas,
+    .dashboardPanel .memberPanel canvas {
+        width: 100%;
+        height: auto;
+    }
+    .dashboardPanel .reportPanel {
+        padding: 5px;
+    }
+    .dashboardPanel .reportPanel .panel,
+    .dashboardPanel .ratioPanel .panel,
+    .dashboardPanel .memberPanel .panel {
+        width: 100%;
+    }
+    .dashboardPanel .ratioPanel,
+    .dashboardPanel .memberPanel {
+        width: 50%;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .t_h2 tr th,
+    .t_h2 tr td {
+        font-size: 1rem;
+    }
+}
+
+
+/**            card flip/flop                 */
+
+
+/**********************************************/
+
+.flip {
+    perspective: 800;
+    width: 100%;
+    height: 240px;
+    position: relative;
+    /*margin: 50px auto;*/
+}
+
+.flip:after {
+    content: '';
+    clear: both;
+}
+
+.flip .card.flipped {
+    transform: rotatey(-180deg);
+}
+
+.flip .card {
+    width: 100%;
+    height: 240px;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #1a1a22;
+}
+
+.flip .card .face {
+    width: 100%;
+    height: 240px;
+    /*height: 100%;*/
+    position: absolute;
+    backface-visibility: hidden;
+    z-index: 2;
+    font-family: Georgia;
+    font-size: 3em;
+    text-align: center;
+}
+
+.flip .card .front {
+    position: absolute;
+    padding: 30px auto;
+    z-index: 1;
+    height: 240px;
+    line-height: 1.5rem;
+    /*background: black;*/
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.flip .card .back {
+    transform: rotatey(-180deg);
+    background: #1a1a22;
+    color: #EEE;
+    cursor: pointer;
+    height: 240px;
+}
+
+.flip .card table {
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.flip .card .flip_updown {
+    height: 117px
+}
+
+.flip .card table tr td {
+    padding: 5px 0;
+    font-size: 1rem;
+}
+
+.flip .card table tr td .flip_tb_text {
+    font-size: .88rem;
+}
+
+.flip .card .front table tr td .up,
+.flip .card .front table tr td .down {
+    font-size: 50px;
+    padding: 10px 5px;
+    line-height: 50px;
+    letter-spacing: -2px;
+    /*position: absolute;*/
+    margin: 25px auto;
+    text-align: center;
+    height: 117px;
+    position: absolute;
+    top: 25px;
+}
+
+.flip .card .front table tr td .down {
+    color: #77cc55;
+}
+
+.flip .card .front table tr td .up {
+    color: #ff5454;
+}
+
+
+/***** 模擬 tooltip ****/
+
+.edx-tooltip-content {
+    position: absolute;
+    border-radius: 3px;
+    z-index: 11;
+    display: block;
+    font-weight: normal;
+    opacity: 0;
+    pointer-events: none !important;
+    /*animation: bounceIn 1.2s;
+    -webkit-animation: bounceIn 1.2s;*/
+    top: 365px;
+    right: -45px;
+}
+
+.edx-tooltip-content.type-tooltip {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+    padding: 0 10px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.edx-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 48px;
+    right: 48%;
+}
+
+.edx-tooltip-content .tooltip-label {
+    display: block;
+    line-height: 1em;
+    padding: 8px 5px 5px 5px;
+    font-size: 1em;
+}
+
+.edx-tooltip-content .tooltip-val {
+    display: block;
+    font-size: 1.3em;
+    line-height: 1em;
+    padding: 0 5px 8px 5px;
+}

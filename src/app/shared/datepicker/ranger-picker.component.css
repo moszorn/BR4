@@ -1,0 +1,63 @@
+/***************** daterangepicker  2017/04/17 Add****************/
+
+.input-group {
+    height: 36px;
+    margin-top: -3px;
+}
+
+.input-group .form-control_range {
+    background: #2b2b2b;
+    width: 480px;
+    display: block;
+    padding: 5px 0 0 2px;
+}
+
+.input-group .form-control_range .left_area,
+.input-group .form-control_range .right_area {
+    display: inline-block;
+    float: left;
+    width: 43%;
+    line-height: 2.2rem;
+    height: 33px;
+    color: #8d8d8d;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.input-group .form-control_range .left_area {
+    color: #CECECE
+}
+
+.input-group .form-control_range .min_area {
+    display: inline-block;
+    float: left;
+    width: 13%;
+    line-height: 2.2rem;
+    height: 33px;
+    color: #8d8d8d;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.apply_line {
+    line-height: 30px;
+    border-top: 1px dashed #EEE;
+    margin: 10px 0;
+}
+
+.input-group .form-control>span {
+    width: 120px
+}
+
+.daterangepicker {
+    position: absolute;
+    color: inherit;
+    background-color: #666;
+    border-radius: 4px;
+    width: 278px;
+    padding: 4px;
+    margin-top: 1px;
+    top: 100px;
+    left: 20px;
+    /* Calendars */
+}

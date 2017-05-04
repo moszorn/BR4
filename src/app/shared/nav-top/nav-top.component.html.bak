@@ -1,0 +1,57 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<!-- .headerBar start -->
+<div class="headerBar">
+    <!-- .headerBarContent start -->
+    <div class="headerBarContent">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+            <button id="nav_leftbtn" class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#reportNavDropdown" aria-controls="reportNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="nav-report"></span>
+                    </button>
+            <button id="nav_rgtbtn" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+            <a class="navbar-brand" href="#">
+                <div class="icon-logo"></div>
+                <div>[云报系统中心]</div>
+            </a>
+            <div class="reportNav">
+                <div class="collapse navbar-collapse" id="reportNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" data-toggle="collapse" data-target="#reportNavDropdown">
+                            <a class="nav-link" routerLink='/br/Dashboard' routerLinkActive="active">图表呈现<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item" data-toggle="collapse" data-target="#reportNavDropdown"><a class="nav-link" routerLink='/br/Report/D' routerLinkActive="active">报表呈现</a></li>
+                        <li class="nav-item" data-toggle="collapse" data-target="#reportNavDropdown"><a class="nav-link" routerLink='/br/Member' routerLinkActive="active">会员概况</a></li>
+                        <li class="nav-item" data-toggle="collapse" data-target="#reportNavDropdown">
+                            <a class="nav-link" routerLink='/br/Game' routerLinkActive="active">游戏报表</a></li>
+                        <li class="nav-item" data-toggle="collapse" data-target="#reportNavDropdown"><a class="nav-link " href="#">登出 </a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="collapse navbar-collapse " id="navbarNavDropdown ">
+                <ul class="navbar-nav ">
+                    <li class="nav-item active ">
+                        <a class="nav-link " href="# ">营运信息<span class="sr-only ">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="# ">各站统计报表</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="# ">帐务管理</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="http://example.com " id="navbarDropdownMenuLink " data-toggle="dropdown " aria-haspopup="true " aria-expanded="false ">系统管理</a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink ">
+                                <a class="dropdown-item " href="# ">会员等级管理</a>
+                                <a class="dropdown-item " href="# ">公司入款帐户管理</a>
+                                <a class="dropdown-item " href="# ">线上支付商户管理</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>-->
+        </nav>
+    </div>
+    <!-- .headerBarContent end -->

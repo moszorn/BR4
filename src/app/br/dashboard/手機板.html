@@ -1,0 +1,164 @@
+   <!-- .m_selectPanel start -->
+    <div class="m_selectPanel">
+      <div class="tabs">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+          <li class="page-item"><button class="page-link" (click)='updateDatePicker(10);query();'>昨日</button></li>          
+                      <li class="page-item"><button class="page-link" (click)='updateDatePicker(11);query();'>本周</button></li>
+                      <li class="page-item"><button class="page-link" (click)='updateDatePicker(12);query();'>上周</button></li>
+                      <li class="page-item"><button class="page-link" (click)='updateDatePicker(13);query();'>本月</button></li>
+                      <li class="page-item"><button class="page-link" (click)='updateDatePicker(14);query();'>上月</button></li>
+
+          </ul>
+        </nav>
+      </div>
+      <div class="tabsDorpdown">
+        <select class="">
+<option selected>今日</option>
+<option>昨日</option>
+<option>本周</option>
+<option>上周</option>
+<option>本月</option>
+<option>上月</option>
+</select>
+      </div>
+      <div class="daterangepicker_input clearFix">
+        <span style="margin-right:10px">日期</span>
+        <div class="daterangepicker_start">
+          <input class="form" type="text" name="daterangepicker_start" value="2017-04-10">
+        </div>
+        <span>-</span>
+        <div class="daterangepicker_end">
+          <input class="form" type="text" name="daterangepicker_end" value="2017-04-10" style="margin-right:10px">
+        </div>
+        <button class="btnPosition">查询</button>
+      </div>
+      <div class="show clearFix">
+        <span>查询结果： {{uiFrom}} 至 {{uiTo}}</span>
+        <button class="btn_close">X</button>
+      </div>
+    </div>
+    <!-- .m_selectPanel end -->
+    <!-- .m_effectivePanel start -->
+    <div class="m_effectivePanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">有效投注</p>
+          <p class="data">{{gauge?.commissionableSums?.current | number:'1.2-2'}}</p>
+        </div>
+        <div class="canvasB" width="240" height="110" style="background-color:#223333">
+        <ngx-charts-bar-vertical [tooltipDisabled]="true" 
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="commissionLastTen"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [showXAxisLabel]="showXAxisLabel"    
+      [xAxisLabel]="xAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+      </div>
+     </div>
+    </div>
+    <!-- .m_effectivePanel end -->
+    <!-- .m_betPanel start -->
+    <div class="m_betPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">投注单量</p>
+          <p class="data">{{gauge?.wagersCounts?.current | number:'1.2-2'}}</p>
+        </div>
+        <div class="canvasB" width="240" height="110" style="background-color:#223333">
+        <ngx-charts-bar-vertical [tooltipDisabled]="true" 
+              [view]="view" 
+              [scheme]="colorScheme"
+              [results]="wagerCountsTen"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [showXAxisLabel]="showXAxisLabel"    
+              [xAxisLabel]="xAxisLabel"
+              (select)="onSelect($event)">
+            </ngx-charts-bar-vertical>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- .m_betPanel end -->
+    <!-- .m_profitPanel start -->
+    <div class="m_profitPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">损益</p>
+          <p class="data">{{gauge?.payoffSums?.current | number:'1.2-2'}}</p>
+          <p class="data" style="font-size:14px;color:#44bbcc">前期 {{gauge?.payoffSums?.before | number:'1.2-2'}}</p>
+        </div>
+        <div class="up">
+          <div class="icon icon-up"></div>{{gauge?.payoffSums?.percentage | number:'1.0'}}<span>%</span></div>
+        <canvas class="canvasA" width="240" height="160" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_profitPanel end -->
+    <!-- .m_ratioPanel start -->
+    <div class="m_ratioPanel">
+      <div class="panel">
+        <div class="info">
+          <p class="title">营收比</p>
+        </div>
+        <canvas width="110" height="210" style="background-color:#223333"></canvas>
+      </div>
+    </div>
+    <!-- .m_ratioPanel end -->
+    <!-- .m_reportPanel start -->
+    <div class="m_reportPanel">
+      <div class="panel">
+        <header>
+          <div class="title">娱乐城管理报表</div>
+        </header>
+        <article>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>游戏种类</th>
+                  <th>损益</th>
+                  <th>有效投注</th>
+                  <th>营收比</th>
+                  <th>注单量</th>
+                  <th>会员数</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let item of entries'> 
+                  <th>{{item.category}}</th>
+                  <td>{{ item.payoffSums |number : '1.2-2'}}</td>
+                  <td>{{ item.commissionableSums |number : '1.2-2'}}</td>
+                  <td>{{ item.bite}}%</td>
+                  <td>{{ item.wagersCounts | number : '1.0'}}</td>
+                  <td>{{ item.memberCounts | number : '1.0'}}</td>
+                </tr> 
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- .m_reportPanel end -->
+    <!-- .m_memberPanel start -->
+    <div class="m_memberPanel">
+      <div class="panel">
+        <div class="box clearFix">
+          <canvas width="310" height="110" style="background-color:#223333;margin-right:20px"></canvas>
+          <div class="info">
+            <p class="title">有效投注会员</p>
+            <ul class="data">
+              <li>
+                <div class="swatch" style="background-color: rgb(51, 136, 221)"></div>当期会员数 32,151</li>
+              <li>
+                <div class="swatch" style="background-color: rgb(221, 85, 17)"></div>前期会员数 27,759</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- .m_memberPanel end -->

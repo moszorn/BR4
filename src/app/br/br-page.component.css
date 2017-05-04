@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/********** Nav **********/
+
+.navTabs {
+    margin-top: 20px;
+    position: relative;
+    height: auto;
+}
+
+.nav-tabs {
+    line-height: 43px;
+    border-bottom: 1px solid #ddddee;
+}
+
+.nav-link {
+    padding: 0 25px;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #e6e6f3 #e6e6f3 #ddddee;
+}
+
+.nav-tabs .nav-link.active {
+    color: #445555;
+    font-weight: bold;
+    background-color: #ecf2f6;
+    border-color: #ddddee #ddddee #ecf2f6;
+}
+
+.nav-tabs a {
+    color: #8899aa;
+}
+
+.time {
+    position: absolute;
+    top: 12px;
+    right: 0;
+}
+
+
+/*************** RWD-991px ***************/
+
+@media only screen and (max-width: 991px) {
+    .navTabs {
+        height: 0px;
+        overflow: hidden;
+        margin-top: 8px;
+    }
+}

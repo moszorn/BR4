@@ -1,0 +1,15 @@
+Javascript:
+
+    src\assets\js\bootstrap-daterangepicker\daterangepicker.js  (Edward修改過,因為要客製化Datepicker)
+    src\assets\js\ng2-daterangepicker\config.service.js (Edward修改過,因為要客製化Datepicker)
+    src\assets\js\d3old (D3 lib早期版本)
+
+      將上面這三個資料夾複製到node_modules下並覆蓋原來的資料夾
+
+
+或將這兩個檔案覆蓋分別覆蓋到
+   node_modules\bootstrap-daterangepicker\daterangepicker.js
+與
+   node_modules\ng2-daterangepicker\lib\daterangepicker\config.service.js
+
+並將 src\assets\js\d3old資料夾搬移到 node_modules\d3old

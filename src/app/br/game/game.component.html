@@ -1,0 +1,188 @@
+<main class="gameContent">
+    <!-- .gameTabs start -->
+    <section class="gameTabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mt-10"></div>
+                    <button class="btnPosition2" routerLink="/br/GamesInfo">进阶查询</button>
+                    <div class="mt-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .gameTabs end -->
+    <!-- .gameTabs start -->
+    <section class="gamerport container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- .reportList start -->
+                <section class="reportList">
+                    <header>
+                        <div class="listA">
+                            <div class="title" id='payoffSums'>損益</div>
+                            <ul class="tab">
+                                <li><img src='/assets/images/spin-loading.svg' *ngIf='payoffSumsLineDataIsInQuery' width='40' height='40' /></li>
+                                <li><a href="javascript:;" class="active" (click)='queryLineByDay_Week_Month($event)' Cwhat='listA' data-searchBy='D' data-kind='payoffSums'>日</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listA' data-searchBy='W' data-kind='payoffSums'>周</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listA' data-searchBy='M' data-kind='payoffSums'>月</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <article>
+                        <div class="line-chart">
+                            <!--<div class="canvasA" style="background-color:#EEE;width:100%;height:142px"></div>-->
+
+                            <ngx-charts-line-chart id="line-chartA" [scheme]="{ domain: ['#22A8D8', '#A10A28', '#C7B42C', '#AAAAAA'] }" [results]="payoffSumsLineData" [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]="false" [autoScale]="false">
+                            </ngx-charts-line-chart>
+                        </div>
+                        <div class="clear"></div>
+                    </article>
+                </section>
+                <!-- .reportList end -->
+                <div class="mt-20"> </div>
+                <div class="clear"></div>
+                <section class="reportList">
+                    <header>
+                        <div class="listB">
+                            <div class="title" id='commissionableSums'>有效投注</div>
+                            <ul class="tab">
+                                <li><img src='/assets/images/spin-loading.svg' *ngIf='commissionableSumsLineDataIsInQuery' width='40' height='40' /></li>
+                                <li><a href="javascript:;" class="active" (click)='queryLineByDay_Week_Month($event)' Cwhat='listB' data-searchBy='D' data-kind='commissionableSums'>日</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listB' data-searchBy='W' data-kind='commissionableSums'>周</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listB' data-searchBy='M' data-kind='commissionableSums'>月</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <article>
+                        <div class="line-chart">
+                            <ngx-charts-line-chart id="line-chartB" [scheme]="{ domain: ['#FF5454', '#5AA454', '#C7B42C', '#AAAAAA'] }" [results]="commissionableSumsLineData" [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]="false" [autoScale]="false">
+                            </ngx-charts-line-chart>
+                        </div>
+                    </article>
+                </section>
+                <!-- .reportList2 end -->
+                <div class="mt-20"></div>
+                <div class="clear"></div>
+
+                <section class="reportList">
+                    <header>
+                        <div class="listC">
+                            <div class="title" id='wagersCounts'>投注單量</div>
+                            <ul class="tab">
+                                <li><img src='/assets/images/spin-loading.svg' *ngIf='wagersCountsLineDataIsInQuery' width='40' height='40' /></li>
+                                <li><a href="javascript:;" class="active" (click)='queryLineByDay_Week_Month($event)' Cwhat='listC' data-searchBy='D' data-kind='wagersCounts'>日</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listC' data-searchBy='W' data-kind='wagersCounts'>周</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listC' data-searchBy='M' data-kind='wagersCounts'>月</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <article>
+                        <div class="line-chart">
+                            <ngx-charts-line-chart id="line-chartC" [scheme]="{ domain: ['#77C444', '#5AA454', '#C7B42C', '#AAAAAA'] }" [results]="wagersCountsLineData" [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]="false" [autoScale]="false">
+                            </ngx-charts-line-chart>
+                        </div>
+                    </article>
+                </section>
+                <div class="mt-20"> </div>
+                <div class="clear"></div>
+                <!-- .reportList3 end -->
+                <section class="reportList">
+                    <header>
+                        <div class="listD">
+                            <div class="title" id='bite'>營收比</div>
+                            <ul class="tab">
+                                <li><img src='/assets/images/spin-loading.svg' *ngIf='biteLineDataIsInQuery' width='40' height='40' /></li>
+                                <li><a href="javascript:;" class="active" (click)='queryLineByDay_Week_Month($event)' Cwhat='listD' data-searchBy='D' data-kind='bite' class="active">日</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listD' data-searchBy='W' data-kind='bite'>周</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listD' data-searchBy='M' data-kind='bite'>月</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <article>
+                        <div class="line-chart">
+                            <ngx-charts-line-chart id="line-chartD" [scheme]="{ domain: ['#66CCEE', '#5AA454', '#C7B42C', '#AAAAAA'] }" [results]="biteLineData" [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]="false" [autoScale]="false">
+                            </ngx-charts-line-chart>
+                        </div>
+                        <div class="clear"></div>
+                    </article>
+                </section>
+                <div class="mt-20"> </div>
+                <div class="clear"></div>
+                <!-- .reportList4 end -->
+                <section class="reportList">
+                    <header>
+                        <div class="listE">
+                            <div class="title" id='memberCounts'>有效投注會員</div>
+                            <ul class="tab">
+                                <li><img src='/assets/images/spin-loading.svg' *ngIf='memberCountsLineDataIsInQuery' width='40' height='40' /></li>
+                                <li><a href="javascript:;" class="active" (click)='queryLineByDay_Week_Month($event)' Cwhat='listE' data-searchBy='D' data-kind='memberCounts'>日</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listE' data-searchBy='W' data-kind='memberCounts'>周</a></li>
+                                <li><a href="javascript:;" (click)='queryLineByDay_Week_Month($event)' Cwhat='listE' data-searchBy='M' data-kind='memberCounts'>月</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <article>
+                        <div class="line-chart">
+                            <ngx-charts-line-chart [tooltipDisabled]="false" id="line-chartE" [scheme]="{ domain: ['#ee9900', '#5AA454', '#C7B42C', '#AAAAAA'] }" [results]="memberCountsLineData" [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]="false" [autoScale]="false">
+                            </ngx-charts-line-chart>
+                        </div>
+                    </article>
+                </section>
+                <div class="mt-20"> </div>
+                <div class="clear"></div>
+                <!-- .reportList5 end -->
+
+            </div>
+            <div class="col-md-4 ">
+                <div class="gamerport_right_Tabs">
+                    <section class="memberTabs">
+                        <ul class="nav nav-tabs-xs" id='pie_bar_tabpan'>
+                            <li class="nav-item">
+                                <a href="javascript:;" data-kind='catalog' class="nav-link" (click)='cathallClicks[0]=true;cathallClicks[1]=false;cathallClicks[2]=false;queryPieBarBy($event)' [ngClass]='{"active":cathallClicks[0]}'>種類</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" data-kind='halls' class="nav-link" (click)='cathallClicks[0]=false;cathallClicks[1]=true;cathallClicks[2]=false;queryPieBarBy($event)' [ngClass]='{"active":cathallClicks[1]}'>娛樂城</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" data-kind='hall' class="nav-link" (click)='cathallClicks[0]=false;cathallClicks[1]=false;cathallClicks[2]=true;queryPieBarBy($event)' [ngClass]='{"active":cathallClicks[2]}'>娛樂廳</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <div class="title"> 損益</div>
+                    <div class="gamerp_r_line">
+                        <div id="line_payoff">
+                            <div class="more_tack">
+                                <button type="button" class="btn btn-info">更多詳情</button>
+                            </div>                         
+<ngx-charts-bar-vertical [customColors]='tenBarFocus_r' [tooltipDisabled]="false" (activate)='tenBarActive($event)' [tooltipDisabled]="false" [scheme]="{domain:['#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb', '#d9e4eb']}" [results]="payoffSums10Bar" [gradient]="true" [xAxis]="false"></ngx-charts-bar-vertical>
+                        </div>
+                        <div class="clear"></div>
+                        <Br>
+                    </div>
+                    <div class="title"> 有效投注</div>
+                    <div class="gamerp_r_table">
+                       <ngx-charts-pie-chart id="pieA" [scheme]="{domain: ['#f8cb00', '#f86c6b', '#63c2de', '#20a8d8', '#4dbd74']}" [results]="commissionableSumsPieData" [legend]="true" [explodeSlices]="false" [labels]="false" [doughnut]="true" [gradient]="true" [arcWidth]="0.5" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+                    </div>
+
+                    <div class="title"> 投注單量</div>
+                    <div class="gamerp_r_table">
+                     <ngx-charts-pie-chart id="pieA" [scheme]="{domain: ['#f8cb00', '#f86c6b', '#63c2de', '#20a8d8', '#4dbd74']}" [results]="wagersCountsPieData" [legend]="true" [explodeSlices]="false" [labels]="false" [doughnut]="true" [gradient]="true" [arcWidth]="0.5" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+                    </div>
+
+                    <div class="title"> 營收比</div>
+                    <div class="gamerp_r_table">
+                      <ngx-charts-pie-chart id="pieA" [scheme]="{domain: ['#f8cb00', '#f86c6b', '#63c2de', '#20a8d8', '#4dbd74']}" [results]="bitePieData" [legend]="true" [explodeSlices]="false" [labels]="false" [doughnut]="true" [gradient]="true" [arcWidth]="0.5" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+                    </div>
+
+                    <div class="title">有效投注會員</div>
+                    <div class="gamerp_r_table">
+                      <ngx-charts-pie-chart id="pieA" [scheme]="{domain: ['#f8cb00', '#f86c6b', '#63c2de', '#20a8d8', '#4dbd74']}" [results]="memberCountsPieData" [legend]="true" [explodeSlices]="false" [labels]="false" [doughnut]="true" [gradient]="true" [arcWidth]="0.5" [tooltipDisabled]="false"></ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- gamereport End-->
+    </section>
+</main>
+<ng2-toasty></ng2-toasty>

@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/********** MemberTabs **********/
+
+.memberTabs {
+    margin: -10px 10px 10px 10px;
+    position: relative;
+}
+
+.nav-tabs {
+    line-height: 43px;
+    border-bottom: 1px solid #d4d4e4;
+}
+
+a.nav-link {
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #d4d4e4;
+}
+
+.nav-tabs .nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #44bbcc;
+    border-color: #44bbcc;
+}
+
+.nav-tabs a {
+    color: #44bbcc;
+}
+
+.memberTabs .btnPosition {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.memberPanel .list {
+    width: 100%;
+    padding-left: 1%;
+}
+
+.memberPanel .list .flip {
+    display: inline-block;
+}
+
+
+/********** MemberContent **********/
+
+.memberContent {
+    background-color: #ecf2f6;
+    padding: 20px;
+}
+
+.memberPanel {
+    width: 100%;
+}
+
+.memberPanel .panel {
+    width: 280px;
+    margin: 1.2rem;
+    /*float: left; 於4/11註解，解決版面靠左無法置中*/
+    position: relative;
+}
+
+
+/***** 4/11新增，移除CARD 外框 *******/
+
+.memberPanel .panel .card {
+    border: none;
+}
+
+
+/***** 4/11新增，移除CARD 外框  END*******/
+
+.memberPanel .panel a {
+    text-decoration: none;
+    display: block;
+}
+
+.memberPanel .panel a:hover {
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(20%, 20%, 40%, 0.2);
+    -webkit-box-shadow: 0 0 10px rgba(20%, 20%, 40%, 0.2);
+    box-shadow: 0 0 10px rgba(20%, 20%, 40%, 0.2);
+}
+
+.memberPanel .panel .info {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px 5px 20px;
+    text-align: center;
+}
+
+.memberPanel .panel .info .title {
+    font-size: 20px;
+    color: #334455;
+    line-height: 30px;
+}
+
+.memberPanel .panel .info .data {
+    font-size: 16px;
+    color: #44bbcc;
+    line-height: 22px;
+}
+
+.memberPanel .panel .info .up {
+    font-size: 45px;
+    color: #ff5454;
+    line-height: 45px;
+    position: relative;
+    padding: 15px 0 0 20px;
+    text-align: left;
+    letter-spacing: -2px;
+}
+
+.memberPanel .panel .info .up span {
+    font-size: 13px;
+    color: #ff5454;
+    margin-left: 4px;
+}
+
+.memberPanel .panel .info .down {
+    font-size: 45px;
+    color: #77cc55;
+    line-height: 45px;
+    position: relative;
+    padding: 15px 0 0 20px;
+    text-align: left;
+    letter-spacing: -2px;
+}
+
+.memberPanel .panel .info .down span {
+    font-size: 13px;
+    color: #77cc55;
+    margin-left: 4px;
+}
+
+.memberPanel .panel .icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+
+/*************** RWD-1000px ***************/
+
+@media screen and (max-width:1000px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .memberPanel .list .panel {
+        width: 47%;
+        margin: 1% 1% 17px 1%;
+    }
+}
+
+
+/*************** RWD-767px ***************/
+
+@media screen and (max-width:767px) {
+    .memberPanel .list .panel {
+        width: 98%;
+        margin: 1% 1% 18px 1%;
+    }
+}
+
+
+/***********************************************/
+
+
+/**            card flip/flop                 */
+
+
+/**********************************************/
+
+flip {
+    perspective: 800;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.flip .card.flipped {
+    transform: rotatey(-180deg);
+}
+
+.flip .card {
+    width: 100%;
+    height: 12rem;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.flip .card .face {
+    width: 100%;
+    /*height: 100%;*/
+    position: absolute;
+    backface-visibility: hidden;
+    z-index: 2;
+    font-family: Georgia;
+    font-size: 3em;
+    text-align: center;
+    line-height: 200px;
+}
+
+.flip .card .front {
+    position: absolute;
+    z-index: 1;
+    /*background: black;*/
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.flip .card .back {
+    transform: rotatey(-180deg);
+    background: blue;
+    color: black;
+    cursor: pointer;
+}
+
+
+/*.face:hover{
+		border-radius: 5px;
+	-moz-box-shadow:0 0 10px rgba(20%,20%,40%,0.2);
+	-webkit-box-shadow:0 0 10px rgba(20%,20%,40%,0.2);
+	box-shadow:0 0 10px rgba(20%,20%,40%,0.2);
+}*/
+
+div.blurdiv {
+    background-size: cover;
+    display: block;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    z-index: 1;
+}
+
+div.fail {
+    background-image: url(/assets/images/0.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    ;
+}
+
+.flip .card .back {
+    background: #FFF;
+    padding: 10px 20px;
+}
+
+.hiddenCard {
+    display: none!important;
+}

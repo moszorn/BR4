@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/********** wrapper **********/
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.brContainer {
+    width: 100%;
+}
+
+
+/********** FOOTER ***********/
+
+footer {
+    color: #557979;
+    line-height: 70px;
+    height: 70px;
+    border-top: 1px solid #ddddee;
+    text-align: center;
+}
+
+
+/*************** RWD-1000px ***************/
+
+@media screen and (max-width:1000px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+
+
+/*************** RWD-767px ***************/
+
+@media screen and (max-width:767px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0 8px;
+    }
+}

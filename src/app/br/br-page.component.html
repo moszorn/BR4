@@ -1,0 +1,21 @@
+<!-- .navTabs start -->
+<div class="navTabs">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/br/Dashboard' routerLinkActive="active">图表呈现</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/br/Report/D' routerLinkActive="active">报表呈现</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/br/Member' routerLinkActive="active">会员概况</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/br/Game' routerLinkActive="active">游戏报表</a>
+        </li>
+    </ul>
+    <!--2017/03/10(五) 10:20:30-->
+    <time class="time">{{time_nowshow}}</time>
+</div>
+<!-- .navTabs end -->
+<router-outlet class='outlet'></router-outlet>

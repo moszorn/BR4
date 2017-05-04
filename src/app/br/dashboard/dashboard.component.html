@@ -1,0 +1,379 @@
+﻿<!-- .dashboardContent start -->
+<main class="dashboardContent">
+    <!-- .dashboardPanel start -->
+    <section class="dashboardPanel clearFix">
+        <!-- .dashboardPanel start -->
+
+        <div class="selectPanel">
+            <div class="tabs">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><button data-dwm='DAY' data-byWording='日' class="page-link active" (click)='updateDatePicker(10);query();' (click)='header_timepick($event)'>昨日</button></li>
+                        <li class="page-item"><button data-dwm='WEEK' data-byWording='周' class="page-link" (click)='updateDatePicker(11);query();' (click)='header_timepick($event)'>本周</button></li>
+                        <li class="page-item"><button data-dwm='WEEK' data-byWording='周' class="page-link" (click)='updateDatePicker(12);query();' (click)='header_timepick($event)'>上周</button></li>
+                        <li class="page-item"><button data-dwm='MONTH' data-byWording='月' class="page-link" (click)='updateDatePicker(13);query();' (click)='header_timepick($event)'>本月</button></li>
+                        <li class="page-item"><button data-dwm='MONTH' data-byWording='月' class="page-link" (click)='updateDatePicker(14);query();' (click)='header_timepick($event)'>上月</button></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="daterangepicker_input clearFix">
+                <span style="margin-right:10px">日期</span>
+                <app-dateranger-picker (applySelect)='dateRangSelect($event)' [startBegin]="compareDateStart" [startEnd]="compareDateEnd" [stopBegin]="dateStart" [stopEnd]="dateEnd"></app-dateranger-picker>
+                <button class="btnPosition" (click)='query()'>查询</button>
+            </div>
+            <!--<div class="show clearFix">
+                <span>查询结果： {{uiFrom}} 至 {{uiTo}}</span>
+                <button class="btn_close">X</button>
+            </div>-->
+        </div>
+        <!-- .selectPanel end -->
+
+        <!-- .profitPanel start -->
+        <div class="profitPanel">
+            <div class="edx-tooltip-content position-top type-tooltip">
+                <div>
+                    <span class="tooltip-caret position-top">
+                     </span>
+                    <div class="tooltip-content">
+                        <span>
+                             <span class="tooltip-label">{{BarTip?.payoffSums?.date}}</span>
+                        <span class="tooltip-val">{{BarTip?.payoffSums?.value}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="title">损益</p>
+                <!--<ngx-charts-gauge [view]="gaugeView" [scheme]="gaugeColorScheme" [results]="gaugePayOff" [min]="0" [max]="100" [angleSpan]="240" [startAngle]="-120" [showAxis]="false" (select)="onSelect($event)"></ngx-charts-gauge>-->
+                <div class="flip">
+                    <div class='card' [ngClass]="{flipped:gaugeFliper.flip1}" (click)='gaugeFliper.flip1=!gaugeFliper.flip1'>
+                        <div class="face front">
+                            <div class="info">
+                                <!--<p class="title">损益</p>-->
+                                <table class="">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="flip_updown">
+                                                <div class='down' [ngClass]="{'up': gauge?.payoffSums?.isRise , 'down': !gauge?.payoffSums?.isRise}">
+                                                    <div class="icon" [ngClass]="{'icon-up': gauge?.payoffSums?.isRise ,' icon-down':  !gauge?.payoffSums?.isRise}"></div>{{gauge?.payoffSums?.percentage | number:'1.0'}}<span>%</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">當期</span>
+                                        </td>
+                                        <td>
+                                            <p class="data">{{gauge?.payoffSums?.current | number:'1.2-2'}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">前期</span>
+                                        </td>
+                                        <td>
+                                            <p style='color:#fff'>{{gauge?.payoffSums?.before | number:'1.2-2'}}</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="face back ">
+                            <!--<p class="title">损益</p>-->
+                            <p class="data">{{gauge?.payoffSums?.current | number:'1.2-2'}}</p>
+                            <div class='down' [ngClass]="{'up': gauge?.payoffSums?.isRise , 'down': !gauge?.payoffSums?.isRise}">
+                                <div class="icon" [ngClass]="{'icon-up': gauge?.payoffSums?.isRise ,' icon-down':  !gauge?.payoffSums?.isRise}"></div>{{gauge?.payoffSums?.percentage | number:'1.0'}}<span>%</span>
+                                <p style='color:#fff'>{{gauge?.payoffSums?.before | number:'1.2-2'}}</p>
+                            </div>
+                            <router-outlet name='payoff'></router-outlet>
+                        </div>
+                    </div>
+                </div>
+                <ul class="tab">
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='A' data-groupBy='T' data-kind='payoffSums' data-byWording='时'>时</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='A' data-groupBy='D' data-kind='payoffSums' data-byWording='日' [ngClass]='{active: show_DWM == "DAY"}'>日</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='A' data-groupBy='W' data-kind='payoffSums' data-byWording='周' [ngClass]='{active: show_DWM == "WEEK"}'>周</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='A' data-groupBy='M' data-kind='payoffSums' data-byWording='月' [ngClass]='{active: show_DWM == "MONTH"}'>月</a></li>
+                </ul>
+                <div class="clear"></div>
+                <div class="clearFix"></div>
+                <div class="canvasB">
+                    <ngx-charts-bar-vertical [xAxis]="false" [showGridLines]="true" [yAxis]="true" [customColors]='tenBarFocus' (activate)='tenBarActive($event)' [tooltipDisabled]="false" [view]="tenBarView" [scheme]="tenBarColorScheme" [results]="payoffSums10" [gradient]="true"
+                        [xAxis]="false" (select)="onSelect($event,'payoffSums')">
+                    </ngx-charts-bar-vertical>
+                </div>
+                <div class="clear"></div>
+                <div class="clearFix"></div>
+                <div class="ngx_unit">
+                    <div class="show_tabtype">以 <span id='payoffSumsBarLabel'>日</span> 合計</div>單位:十万 </div>
+            </div>
+
+        </div>
+        <!-- .profitPanel end -->
+        <!-- .effectivePanel start -->
+        <div class="effectivePanel">
+            <div class="edx-tooltip-content position-top type-tooltip">
+                <div>
+                    <span class="tooltip-caret position-top">
+                     </span>
+                    <div class="tooltip-content">
+                        <span>
+                             <span class="tooltip-label">{{ BarTip?.commissionableSums?.date}}</span>
+                        <span class="tooltip-val">{{BarTip?.commissionableSums?.value}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="title">有效投注</p>
+                <div class="flip">
+                    <div class='card' [ngClass]="{flipped:gaugeFliper.flip2}" (click)='gaugeFliper.flip2=!gaugeFliper.flip2'>
+                        <div class="face front">
+                            <div class="info">
+                                <!--<p class="title">有效投注</p>-->
+                                <table class="">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="flip_updown">
+                                                <div class="down" [ngClass]="{'up': gauge?.commissionableSums?.isRise , 'down': !gauge?.commissionableSums?.isRise}">
+                                                    <div class="icon" [ngClass]="{'icon-up': gauge?.commissionableSums?.isRise , 'icon-down': !gauge?.commissionableSums?.isRise}"></div>{{gauge?.commissionableSums?.percentage | number:'1.0'}}<span>%</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">當期</span>
+                                        </td>
+                                        <td>
+                                            <p class="data">{{gauge?.commissionableSums?.current | number:'1.2-2'}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">前期</span>
+                                        </td>
+                                        <td>
+                                            <p style='color:#fff'>{{gauge?.commissionableSums?.before | number:'1.2-2'}}</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="face back ">
+                            <!--<p class="title">有效投注</p>-->
+                            <p class="data">{{gauge?.commissionableSums?.current | number:'1.2-2'}}</p>
+                            <div class="down" [ngClass]="{'up': gauge?.commissionableSums?.isRise , 'down': !gauge?.commissionableSums?.isRise}">
+                                <div class="icon" [ngClass]="{'icon-up': gauge?.commissionableSums?.isRise , 'icon-down': !gauge?.commissionableSums?.isRise}"></div>{{gauge?.commissionableSums?.percentage | number:'1.0'}}<span>%</span>
+                                <p style='color:#fff'>{{gauge?.commissionableSums?.before | number:'1.2-2'}}</p>
+                            </div>
+                            <router-outlet name='commissionable'></router-outlet>
+                        </div>
+                    </div>
+                </div>
+                <ul class="tab">
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='B' data-groupBy='T' data-kind='commissionableSums' data-byWording='时'>时</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='B' data-groupBy='D' data-kind='commissionableSums' data-byWording='日' [ngClass]='{active: show_DWM == "DAY"}'>日</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='B' data-groupBy='W' data-kind='commissionableSums' data-byWording='周' [ngClass]='{active: show_DWM == "WEEK"}'>周</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='B' data-groupBy='M' data-kind='commissionableSums' data-byWording='月' [ngClass]='{active: show_DWM == "MONTH"}'>月</a></li>
+                </ul>
+                <div class="clear clearFix"></div>
+                <div class="canvasB">
+                    <ngx-charts-bar-vertical [customColors]='tenBarFocus2' (activate)='tenBarActive2($event)' [showGridLines]="true" [yAxis]="true" [tooltipDisabled]="false" [view]="tenBarView" [scheme]="tenBarColorScheme" [results]="commissionableSums10" [gradient]="true"
+                        [xAxis]="false" (select)="onSelect($event,'commissionableSums')">
+                    </ngx-charts-bar-vertical>
+                </div>
+                <div class="clear"></div>
+                <div class="clearFix"></div>
+                <div class="ngx_unit">
+                    <div class="show_tabtype">以 <span id='commissionableSumsBarLabel'>日</span> 合計</div>單位:十万 </div>
+            </div>
+        </div>
+        <!-- .effectivePanel end -->
+        <!-- .betPanel start -->
+        <div class="betPanel">
+            <div class="edx-tooltip-content position-top type-tooltip">
+                <div>
+                    <span class="tooltip-caret position-top">
+                     </span>
+                    <div class="tooltip-content">
+                        <span>
+                             <span class="tooltip-label">{{BarTip?.wagersCounts?.date}}</span>
+                        <span class="tooltip-val">{{BarTip?.wagersCounts?.value}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <p class="title">投注单量</p>
+                <div class="flip">
+                    <div class='card' [ngClass]="{flipped:gaugeFliper.flip3}" (click)='gaugeFliper.flip3=!gaugeFliper.flip3'>
+                        <div class="face front">
+                            <div class="info">
+                                <!--<p class="title">投注单量</p>-->
+                                <table class="">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="flip_updown">
+                                                <div class="down" [ngClass]="{'up': gauge?.wagersCounts?.isRise , 'down': !gauge?.wagersCounts?.isRise}">
+                                                    <div class="icon" [ngClass]="{'icon-up': gauge?.wagersCounts?.isRise , 'icon-down': !gauge?.wagersCounts?.isRise}"></div>{{gauge?.wagersCounts?.percentage | number:'1.0'}}<span>%</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">當期</span>
+                                        </td>
+                                        <td>
+                                            <p class="data">{{gauge?.wagersCounts?.current | number:'1.0'}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                            <span class="flip_tb_text">前期</span>
+                                        </td>
+                                        <td>
+                                            <p style='color:#fff'>{{gauge?.wagersCounts?.before | number:'1.2-2'}}</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="face back ">
+                            <!--<p class="title">投注单量</p>-->
+                            <p class="data">{{gauge?.wagersCounts?.current | number:'1.0'}}</p>
+                            <div class="down" [ngClass]="{'up': gauge?.wagersCounts?.isRise , 'down': !gauge?.wagersCounts?.isRise}">
+                                <div class="icon" [ngClass]="{'icon-up': gauge?.wagersCounts?.isRise , 'icon-down': !gauge?.wagersCounts?.isRise}"></div>{{gauge?.wagersCounts?.percentage | number:'1.0'}}<span>%</span>
+                                <p style='color:#fff'>{{gauge?.wagersCounts?.before | number:'1.0'}}</p>
+
+                            </div>
+                            <router-outlet name='wagers'></router-outlet>
+                        </div>
+                    </div>
+                </div>
+                <ul class="tab">
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='C' data-groupBy='T' data-kind='wagersCounts' data-byWording='时'>时</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='C' data-groupBy='D' data-kind='wagersCounts' data-byWording='日' [ngClass]='{active: show_DWM == "DAY"}'>日</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='C' data-groupBy='W' data-kind='wagersCounts' data-byWording='周' [ngClass]='{active: show_DWM == "WEEK"}'>周</a></li>
+                    <li><a href="javascript:;" (click)='queryTenBarByTime_Day_Week_Month($event)' Cwhat='C' data-groupBy='M' data-kind='wagersCounts' data-byWording='月' [ngClass]='{active: show_DWM == "MONTH"}'>月</a></li>
+                </ul>
+                <div class="clear clearFix"></div>
+                <div class="canvasB" width="240" height="110">
+
+                 
+
+                    <ngx-charts-bar-vertical  (select)="onSelect($event,'wagersCounts')" [customColors]='tenBarFocus3' (activate)='tenBarActive3($event)' [showGridLines]="true" [yAxis]="true" [tooltipDisabled]="false" [view]="tenBarView" [scheme]="tenBarColorScheme" [results]="wagersCounts10" [gradient]="true" [xAxis]="false">
+                    </ngx-charts-bar-vertical>
+                </div>
+                <div class="clear"></div>
+                <div class="clearFix"></div>
+                <div class="ngx_unit">
+                    <div class="show_tabtype">以 <span id='wagersCountsBarLabel'>日</span> 合計</div> 單位:十万 </div>
+            </div>
+        </div>
+        <!-- .betPanel end -->
+        <!-- .reportPanel start -->
+        <div class="reportPanel">
+            <div class="panel">
+                <header>
+                    <div class="title">游戏种类列表</div>
+                </header>
+                <article>
+                    <div class="table-responsive t_h2">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>游戏种类</th>
+                                    <th>损益</th>
+                                    <th>有效投注</th>
+                                    <th>营收比</th>
+                                    <th>注单量</th>
+                                    <th>会员数</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let item of entries'>
+                                    <th>{{item.category}}</th>
+                                    <td>{{ item.payoffSums |number : '1.2-2'}}</td>
+                                    <td>{{ item.commissionableSums |number : '1.2-2'}}</td>
+                                    <td>{{ item.bite}}%</td>
+                                    <td>{{ item.wagersCounts | number : '1.0'}}</td>
+                                    <td>{{ item.memberCounts | number : '1.0'}}</td>
+                                </tr>
+                                <tr *ngIf='payoffSumsTotal'>
+                                    <th>全部</th>
+                                    <td>{{ payoffSumsTotal |number : '1.2-2'}}</td>
+                                    <td>{{ commissionableSumsTotal |number : '1.2-2'}}</td>
+                                    <td>{{ biteTotal }}%</td>
+                                    <td>{{ wagersCountsTotal | number : '1.0'}}</td>
+                                    <td>{{ memberCountsTotal | number : '1.0'}}</td>
+                                </tr>
+                                <tr *ngIf='!entries || entries.length === 0'>
+                                    <th>0</th>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0%</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <!-- .reportPanel end -->
+        <!-- .ratioPanel start -->
+        <div class="ratioPanel">
+            <div class="panel bit_panel">
+
+                <ul id="t_cpul">
+                    <!-- 紅字請給 類別 red 綠色下降 請給類別 green -->
+                    <li *ngFor='let li of biteChartxAxis' [innerHTML]='li'></li>
+                </ul>
+                <div class="info">
+                    <p class="title">营收比</p>
+                </div>
+                <ngx-charts-bar-vertical id="t_cp" (select)='onSelect($event,"bite")' [view]="biteView" [scheme]="biteColorScheme" [results]="biteBar" [gradient]="gradient" [xAxis]="false" [yAxis]="true" [legend]="false" [tooltipDisabled]="false">
+                </ngx-charts-bar-vertical>
+                <!-- Bite xAxis label-->
+                <div class="clear"></div>
+                <Br><br>
+                <div class="mt-10"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- .ratioPanel end -->
+        <!-- .memberPanel start -->
+        <div class="memberPanel">
+            <div class="panel actmem_panel">
+                <div class="info">
+                    <p class="title">活跃会员数</p>
+                </div>
+                <div class="member_line">
+                    <ngx-charts-line-chart (select)='onSelect($event,"memberCounts")' id="index_line" [tooltipDisabled]="false" [scheme]="trendMemberColorScheme" [results]="trendMembersLines" [gradient]="true" [xAxis]="true" [autoScale]="true" [showGridLines]='true' [showXAxisLabel]="false">
+                    </ngx-charts-line-chart>
+                </div>
+                <span class="trendmember_span txt_l">{{trendMemberxAxisLabelStart}}</span><span class="trendmember_span txt_r">{{trendMemberxAxisLabelEnd}}</span>
+                <!-- Bite xAxis label-->
+                <!--<ul>
+                    <li *ngFor='let li of biteChartxAxis' [innerHTML]='li'></li>
+                  </ul>-->
+                <ul class="data">
+                    <li>
+                        <div class="swatch" style="background-color: rgb(51, 136, 221)"></div>当期会员数 {{trendMembers?.currentLabel | number : '1.0'}}</li>
+                    <li>
+                        <div class="swatch" style="background-color: rgb(221, 85, 17)"></div>前期会员数 {{trendMembers?.lastLabel | number : '1.0'}}</li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <!-- .memberPanel end -->
+        <!--start of 手機板-->
+        <!-- end of 手機板-->
+    </section>
+</main>
+<!-- .dashboardContent end -->
+<ng2-toasty></ng2-toasty>

@@ -1,0 +1,111 @@
+<div class="bgeee">
+    <form action="#" class="sch_form">
+        <div class="pd-10 reportList container-fluid">
+            <div class="row area_rsearch pd-10">
+                <div class="col-md-12 sch_header">
+                    <div class="title"> 进阶查询</div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-1 lh_30 not_wrap">
+                            选择日期
+                        </div>
+                        <div class="col-xs-12 col-md-11">
+                            <!--
+                            <input placeholder="" class="date_input" (click)="showDateStartPicker = !showDateStartPicker" [value]='uiFrom'>
+                            <datepicker *ngIf="showDateStartPicker" (ngModel)="dateStart" [showWeeks]="false" name="dateStart" (ngModelChange)="onDateStartChange($event)"></datepicker>-
+                            <input placeholder="" class="date_input" (click)="showDateEndPicker = !showDateEndPicker" [value]='uiTo'>
+                            <datepicker *ngIf="showDateEndPicker" (ngModel)="dateEnd" [showWeeks]="false" name="dateEnd" (ngModelChange)="onDateEndChange($event)"></datepicker>
+                            <button class="button mlr-5 " tabindex="0" *ngIf='!isSlideOpen' (click)='query(false)'> 查 询 </button>
+                             -->
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-xs-12 col-md-1 lh_40 not_wrap mt-05">
+                            游戏分类
+                        </div>
+                        <div class="col-xs-12 col-md-11 pprs lh_40  mt-05">
+                            <button class="dspin-b mlr-5 active">游戏种类</button>
+                            <button class="dspin-b mlr-5">游戏类别</button>
+                            <button class="dspin-b mlr-5">游戏名称</button>
+                        </div>
+                    </div>
+                    <tabset type="pills">
+                        <tab heading="游戏种类">
+                            <div class="mt-10"></div>
+                            <div class="mt-20">
+                                <!--  panel_sort 游戏種類 panel_sort 游戏種類-->
+                                <game-sort-panel></game-sort-panel>
+                                <!--  panel_sort 游戏種類 panel_sort 游戏種類 //-->
+                            </div>
+                        </tab>
+                        <tab heading="游戏类别">
+                            <div class="mt-10"></div>
+                            <div class="mt-20">
+                                <!--  panel_category 游戏类别 panel_category 游戏类别-->
+                                <game-categories-panel></game-categories-panel>
+                                <!--  panel_category 游戏类别 panel_category 游戏类别 //-->
+                            </div>
+                        </tab>
+                        <tab heading="游戏名称">
+                            <div class="mt-10"></div>
+                            <div class="mt-20">
+                                <!--  panel_name 游戏名称 panel_name 游戏名称-->
+                                <game-code-name-panel></game-code-name-panel>
+                                <!--  panel_name 游戏名称 panel_name 游戏名称 //-->
+                            </div>
+                        </tab>
+                    </tabset>
+                    <!--
+                    <div class="mt-20">                     
+                        <game-sort-panel></game-sort-panel>
+                        <game-categories-panel></game-categories-panel>
+                        <game-code-name-panel></game-code-name-panel>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <!-- reportList container-fluid //-->
+    </form>
+    <!-- .reportList start -->
+    <section class="reportList">
+        <header>
+            <div class="title">統計报表
+            </div>
+            <ul class="tab">
+                <li><img src='/assets/images/spin-loading.svg' *ngIf='loadingIndicator' width='40' height='40' /></li>
+            </ul>
+        </header>
+        <article>
+            <div class="table-responsive" [ngClass]="{'blurTable':isTabularQuery}">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>站台</td>
+                            <td align="center">站名</td>
+                            <td align="center">損益</td>
+                            <td align="center">有效投注</td>
+                            <td align="center">營收比</td>
+                            <td align="center">注單量</td>
+                            <td align="center">會員數</td>
+                            <td align="center">站台</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td><a href="javascript:void()">AB001</a></td>
+                        <td align="right">test-pk7611.com</td>
+                        <td align="right">4,476.35</td>
+                        <td align="right">4930.36</td>
+                        <td align="right">66%</td>
+                        <td align="right">注單量</td>
+                        <td align="right">35,246</td>
+                        <td align="right">321</td>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+    <div class="mt-20">
+        <Br> </div>
+    <ng2-toasty></ng2-toasty>
+    <!-- .reportList end -->
+
+    <ng2-toasty></ng2-toasty>

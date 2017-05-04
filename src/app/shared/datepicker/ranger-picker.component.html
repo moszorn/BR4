@@ -1,0 +1,27 @@
+<div class="input-group" daterangepicker (selected)="selectedDate($event)">
+    <!-- 區間日曆手機樣式 -->
+    <!--<div *ngIf='!useDatepicker' class="form-control_range uneditable-input" name="daterange">
+        <div class="left_area">
+            {{ dateRange1.startBegin }}<br> {{ dateRange2.startEnd }} </div>
+        <div class="min_area">相較於</div>
+        <div class="right_area">{{ dateRange3.stopBegin }}<br> {{ dateRange4.stopEnd }}
+        </div>
+    </div>-->
+    <!-- 區間日曆手機樣式 END//-->
+    <!-- 區間日曆桌機樣式 -->
+    <div *ngIf='!useDatepicker' class="form-control_range uneditable-input" name="daterange">
+        <div class="left_area">
+            {{ dateRange3.stopBegin }} ~ {{ dateRange4.stopEnd }}</div>
+        <div class="min_area">相較於</div>
+        <div class="right_area">{{ dateRange1.startBegin }} ~ {{ dateRange2.startEnd }}</div>
+    </div>
+    <!-- 區間日曆桌機樣式 //-->
+    <!-- 單一日曆樣式 -->
+    <span *ngIf='useDatepicker' class='form-control uneditable-input'>
+        {{ singleDatePicker.startBegin }}
+    </span>
+    <!-- 單一 END //-->
+    <span class="input-group-btn">
+        <a type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></a>
+    </span>
+</div>
